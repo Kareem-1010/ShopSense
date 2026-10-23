@@ -92,9 +92,7 @@ class ShopSenseStore {
 
   public persist(): void {
     try {
-      const tmpPath = `${STORE_PATH}.tmp`;
-      fs.writeFileSync(tmpPath, JSON.stringify(this.data, null, 2), 'utf-8');
-      fs.renameSync(tmpPath, STORE_PATH);
+      fs.writeFileSync(STORE_PATH, JSON.stringify(this.data, null, 2), 'utf-8');
     } catch (err) {
       console.error('[Store] Error persisting database store:', err);
     }

@@ -15,7 +15,10 @@ import {
   Box,
   Palette,
   Package,
-  BookOpen
+  BookOpen,
+  Scale,
+  X,
+  Trash2
 } from 'lucide-react';
 import {
   Product,
@@ -89,7 +92,15 @@ export default function App() {
     }
   });
 
-  const [compareProducts, setCompareProducts] = useState<Product[]>([]);
+  const [compareProducts, setCompareProducts] = useState<Product[]>(() => {
+    try {
+      const stored = localStorage.getItem('shopsense_compare_products');
+      return stored ? JSON.parse(stored) : [];
+    } catch {
+      return [];
+    }
+  });
+  const [compareToast, setCompareToast] = useState<string | null>(null);
   const [isCompareOpen, setIsCompareOpen] = useState(false);
   const [isSavedDrawerOpen, setIsSavedDrawerOpen] = useState(false);
   const [mobileFilterOpen, setMobileFilterOpen] = useState(false);
@@ -172,25 +183,55 @@ export default function App() {
     });
   };
 
-  // Handle Compare toggle
+  // Handle Compare toggle with local persistence and friendly feedback
+  const showCompareToast = (msg: string) => {
+    setCompareToast(msg);
+    setTimeout(() => {
+      setCompareToast((curr) => (curr === msg ? null : curr));
+    }, 3500);
+  };
+
   const toggleCompareProduct = (product: Product) => {
-    setCompareProducts((prev) => {
-      const exists = prev.some((p) => p.id === product.id);
-      if (exists) {
-        return prev.filter((p) => p.id !== product.id);
+    const exists = compareProducts.some((p) => p.id === product.id);
+    let updated: Product[];
+    if (exists) {
+      updated = compareProducts.filter((p) => p.id !== product.id);
+      showCompareToast(`Removed "${product.title}" from comparison.`);
+    } else {
+      if (compareProducts.length >= 3) {
+        showCompareToast('Maximum 3 products can be compared. Remove an item to add this one.');
+        return;
       }
-      if (prev.length >= 3) {
-        alert('You can compare up to 3 products at a time.');
-        return prev;
-      }
+      updated = [...compareProducts, product];
+      showCompareToast(`Added "${product.title}" to compare (${updated.length}/3).`);
       recordInteraction({
         session_id: sessionId,
         product_id: product.id,
         event_type: 'compare',
         timestamp: new Date().toISOString()
       });
-      return [...prev, product];
-    });
+    }
+    setCompareProducts(updated);
+    try {
+      localStorage.setItem('shopsense_compare_products', JSON.stringify(updated));
+    } catch (e) {
+      console.warn('Failed to save compare list:', e);
+    }
+  };
+
+  const handleRemoveCompare = (id: string) => {
+    const updated = compareProducts.filter((p) => p.id !== id);
+    setCompareProducts(updated);
+    try {
+      localStorage.setItem('shopsense_compare_products', JSON.stringify(updated));
+    } catch {}
+  };
+
+  const handleClearCompare = () => {
+    setCompareProducts([]);
+    try {
+      localStorage.removeItem('shopsense_compare_products');
+    } catch {}
   };
 
   const handleOpenExplain = (product: Product, explanation?: ExplanationSignals) => {
@@ -668,13 +709,91 @@ export default function App() {
         products={compareProducts}
         isOpen={isCompareOpen}
         onClose={() => setIsCompareOpen(false)}
-        onRemove={(id) => setCompareProducts((prev) => prev.filter((p) => p.id !== id))}
-        onClear={() => setCompareProducts([])}
+        onRemove={handleRemoveCompare}
+        onClear={handleClearCompare}
         onSelectProduct={(p) => {
           setIsCompareOpen(false);
           setActiveDetailProduct(p);
         }}
       />
+
+      {/* Floating Comparison Bar Dock */}
+      {compareProducts.length > 0 && (
+        <aside
+          aria-label="Product comparison dock"
+          className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 bg-stone-900/95 text-stone-100 px-4 sm:px-5 py-3 rounded-2xl shadow-2xl border border-stone-700/80 backdrop-blur-md flex items-center gap-3 sm:gap-4 max-w-[95vw] sm:max-w-2xl"
+        >
+          <div className="flex items-center gap-2">
+            <div className="p-2 rounded-xl bg-amber-500/20 text-amber-400">
+              <Scale className="w-4 h-4" />
+            </div>
+            <div className="hidden sm:block">
+              <p className="text-xs font-semibold">Compare Products ({compareProducts.length}/3)</p>
+              <p className="text-[10px] text-stone-400">Side-by-side specs, price &amp; ratings</p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2">
+            {compareProducts.map((p) => (
+              <div key={p.id} className="relative group/thumb">
+                <img
+                  src={p.images?.[0] || 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=150&q=80'}
+                  alt={p.title}
+                  className="w-9 h-9 rounded-lg object-cover border border-stone-700 bg-stone-800"
+                  title={p.title}
+                />
+                <button
+                  type="button"
+                  onClick={() => handleRemoveCompare(p.id)}
+                  className="absolute -top-1.5 -right-1.5 p-0.5 rounded-full bg-stone-800 text-stone-300 hover:text-red-400 hover:bg-stone-950 border border-stone-600 transition-colors"
+                  title={`Remove ${p.title}`}
+                >
+                  <X className="w-2.5 h-2.5" />
+                </button>
+              </div>
+            ))}
+            {compareProducts.length < 3 && (
+              <div className="w-9 h-9 rounded-lg border border-dashed border-stone-700 flex items-center justify-center text-[10px] text-stone-500 font-medium">
+                +{3 - compareProducts.length}
+              </div>
+            )}
+          </div>
+
+          <div className="flex items-center gap-2 border-l border-stone-700 pl-3">
+            <button
+              type="button"
+              onClick={() => setIsCompareOpen(true)}
+              className="px-3.5 py-1.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-xs flex items-center gap-1.5 shadow-md transition-all whitespace-nowrap cursor-pointer"
+            >
+              <span>Compare ({compareProducts.length})</span>
+              <ChevronRight className="w-3.5 h-3.5" />
+            </button>
+            <button
+              type="button"
+              onClick={handleClearCompare}
+              className="p-1.5 rounded-lg text-stone-400 hover:text-red-400 transition-colors"
+              title="Clear comparison list"
+            >
+              <Trash2 className="w-3.5 h-3.5" />
+            </button>
+          </div>
+        </aside>
+      )}
+
+      {/* Non-intrusive Toast Notification */}
+      {compareToast && (
+        <div className="fixed top-20 right-6 z-50 bg-stone-900 text-stone-100 border border-stone-700 shadow-xl px-4 py-2.5 rounded-xl text-xs flex items-center gap-2.5 animate-in fade-in slide-in-from-top-2 duration-200">
+          <Scale className="w-4 h-4 text-amber-400 shrink-0" />
+          <span className="font-medium">{compareToast}</span>
+          <button
+            type="button"
+            onClick={() => setCompareToast(null)}
+            className="text-stone-400 hover:text-stone-200 p-0.5 ml-1"
+          >
+            <X className="w-3 h-3" />
+          </button>
+        </div>
+      )}
 
       {/* Editorial Footer */}
       <footer className="mt-16 border-t border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900/60 py-8 text-xs text-stone-500">

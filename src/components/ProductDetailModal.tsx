@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, Star, Ruler, Layers, ShieldCheck, Scale, Bookmark, Sparkles, ArrowRight } from 'lucide-react';
+import { X, Star, Ruler, Layers, ShieldCheck, Scale, Bookmark, Sparkles, ArrowRight, Check } from 'lucide-react';
 import { Product } from '../types/index.js';
 import { getSimilarProducts, recordInteraction } from '../services/api.js';
 
@@ -203,12 +203,12 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                   onClick={() => onToggleCompare(product)}
                   className={`flex-1 py-3 px-4 rounded-xl text-xs font-semibold flex items-center justify-center gap-2 border transition-all ${
                     isCompared
-                      ? 'bg-stone-800 text-amber-400 border-stone-700'
+                      ? 'bg-amber-500 text-stone-950 border-amber-500 shadow-sm'
                       : 'border-stone-300 dark:border-stone-700 text-stone-700 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-stone-800'
                   }`}
                 >
-                  <Scale className="w-4 h-4" />
-                  <span>{isCompared ? 'Remove from Compare' : 'Add to Compare'}</span>
+                  {isCompared ? <Check className="w-4 h-4" /> : <Scale className="w-4 h-4" />}
+                  <span>{isCompared ? 'In Compare List (Remove)' : 'Add to Compare'}</span>
                 </button>
               )}
             </div>

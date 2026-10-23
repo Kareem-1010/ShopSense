@@ -75,17 +75,18 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         )}
 
         {/* Action icons overlay: Save & Compare */}
-        <div className="absolute top-2.5 right-2.5 flex flex-col gap-1.5 opacity-90 group-hover:opacity-100 transition-opacity">
+        <div className="absolute top-2.5 right-2.5 z-20 flex flex-col gap-1.5 opacity-90 group-hover:opacity-100 transition-opacity">
           {onToggleSave && (
             <button
               type="button"
+              aria-label={isSaved ? 'Saved to collection' : 'Save item'}
               onClick={(e) => {
                 e.stopPropagation();
                 onToggleSave(product);
               }}
-              className={`p-2 rounded-full backdrop-blur-md transition-all ${
+              className={`p-2 rounded-full backdrop-blur-md transition-all cursor-pointer relative z-20 ${
                 isSaved
-                  ? 'bg-amber-500 text-stone-950 shadow'
+                  ? 'bg-amber-500 text-stone-950 shadow-md ring-2 ring-amber-400/50'
                   : 'bg-stone-900/70 text-stone-200 hover:bg-stone-900 hover:text-white'
               }`}
               title={isSaved ? 'Saved to collection' : 'Save item'}
@@ -97,13 +98,14 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           {onToggleCompare && (
             <button
               type="button"
+              aria-label={isCompared ? 'Remove from compare' : 'Compare product'}
               onClick={(e) => {
                 e.stopPropagation();
                 onToggleCompare(product);
               }}
-              className={`p-2 rounded-full backdrop-blur-md transition-all ${
+              className={`p-2 rounded-full backdrop-blur-md transition-all cursor-pointer relative z-20 ${
                 isCompared
-                  ? 'bg-amber-500 text-stone-950 shadow'
+                  ? 'bg-amber-500 text-stone-950 shadow-md ring-2 ring-amber-400/50'
                   : 'bg-stone-900/70 text-stone-200 hover:bg-stone-900 hover:text-white'
               }`}
               title={isCompared ? 'Remove from compare' : 'Compare product'}

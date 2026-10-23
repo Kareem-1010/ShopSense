@@ -1,7 +1,7 @@
 {
-  "run_id": "eval-1792762348573",
+  "run_id": "eval-1792771977503",
   "benchmark_version": "v1.0.0-furniture-53",
-  "timestamp": "2026-10-23T13:32:28.573Z",
+  "timestamp": "2026-10-23T16:12:57.503Z",
   "total_queries": 53,
   "configuration": {
     "rrf_k": 60,
@@ -10,34 +10,34 @@
   },
   "metrics": {
     "lexical": {
-      "precision_at_5": 0.3321,
-      "precision_at_10": 0.266,
-      "recall_at_5": 0.3121,
-      "recall_at_10": 0.4287,
-      "mrr_at_10": 0.6281,
-      "ndcg_at_10": 0.3929
+      "precision_at_5": 0.1736,
+      "precision_at_10": 0.1377,
+      "recall_at_5": 0.1813,
+      "recall_at_10": 0.2341,
+      "mrr_at_10": 0.4285,
+      "ndcg_at_10": 0.2335
     },
     "dense": {
-      "precision_at_5": 0.4038,
-      "precision_at_10": 0.3151,
-      "recall_at_5": 0.3191,
-      "recall_at_10": 0.4416,
-      "mrr_at_10": 0.6393,
-      "ndcg_at_10": 0.4078
+      "precision_at_5": 0.1925,
+      "precision_at_10": 0.1491,
+      "recall_at_5": 0.163,
+      "recall_at_10": 0.2249,
+      "mrr_at_10": 0.4722,
+      "ndcg_at_10": 0.2379
     },
     "hybrid": {
-      "precision_at_5": 0.4113,
-      "precision_at_10": 0.3226,
-      "recall_at_5": 0.341,
-      "recall_at_10": 0.4883,
-      "mrr_at_10": 0.6349,
-      "ndcg_at_10": 0.4306
+      "precision_at_5": 0.1925,
+      "precision_at_10": 0.1642,
+      "recall_at_5": 0.1796,
+      "recall_at_10": 0.2626,
+      "mrr_at_10": 0.4373,
+      "ndcg_at_10": 0.2529
     }
   },
   "latency_percentiles": {
-    "p50_ms": 45,
-    "p95_ms": 52,
-    "p99_ms": 77
+    "p50_ms": 83,
+    "p95_ms": 96,
+    "p99_ms": 101
   },
   "sample_query_results": [
     {
@@ -47,28 +47,28 @@
       "ground_truth_count": 10,
       "retrieved_count": 15,
       "lexical": {
-        "precision_at_5": 1,
-        "precision_at_10": 0.8,
-        "recall_at_5": 0.5,
-        "recall_at_10": 0.8,
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.2,
         "mrr_at_10": 1,
-        "ndcg_at_10": 0.8466
+        "ndcg_at_10": 0.4543
       },
       "dense": {
-        "precision_at_5": 0.8,
-        "precision_at_10": 0.8,
-        "recall_at_5": 0.4,
-        "recall_at_10": 0.8,
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.2,
         "mrr_at_10": 1,
-        "ndcg_at_10": 0.815
+        "ndcg_at_10": 0.4543
       },
       "hybrid": {
-        "precision_at_5": 1,
-        "precision_at_10": 0.8,
-        "recall_at_5": 0.5,
-        "recall_at_10": 0.8,
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.2,
+        "recall_at_10": 0.2,
         "mrr_at_10": 1,
-        "ndcg_at_10": 0.8618
+        "ndcg_at_10": 0.4725
       }
     },
     {
@@ -78,28 +78,28 @@
       "ground_truth_count": 10,
       "retrieved_count": 15,
       "lexical": {
-        "precision_at_5": 0.2,
-        "precision_at_10": 0.1,
-        "recall_at_5": 0.1,
-        "recall_at_10": 0.1,
-        "mrr_at_10": 1,
-        "ndcg_at_10": 0.3407
-      },
-      "dense": {
         "precision_at_5": 0.4,
         "precision_at_10": 0.3,
         "recall_at_5": 0.2,
         "recall_at_10": 0.3,
         "mrr_at_10": 1,
-        "ndcg_at_10": 0.4482
+        "ndcg_at_10": 0.4275
+      },
+      "dense": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.2,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.3765
       },
       "hybrid": {
-        "precision_at_5": 0.6,
-        "precision_at_10": 0.5,
-        "recall_at_5": 0.3,
-        "recall_at_10": 0.5,
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.3,
+        "recall_at_5": 0.2,
+        "recall_at_10": 0.3,
         "mrr_at_10": 1,
-        "ndcg_at_10": 0.5283
+        "ndcg_at_10": 0.4205
       }
     },
     {
@@ -171,28 +171,28 @@
       "ground_truth_count": 10,
       "retrieved_count": 15,
       "lexical": {
-        "precision_at_5": 0.6,
-        "precision_at_10": 0.6,
-        "recall_at_5": 0.3,
-        "recall_at_10": 0.6,
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.3,
+        "recall_at_5": 0.2,
+        "recall_at_10": 0.3,
         "mrr_at_10": 1,
-        "ndcg_at_10": 0.5688
+        "ndcg_at_10": 0.3066
       },
       "dense": {
-        "precision_at_5": 0.4,
-        "precision_at_10": 0.5,
-        "recall_at_5": 0.2,
-        "recall_at_10": 0.5,
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.3,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.3,
         "mrr_at_10": 1,
-        "ndcg_at_10": 0.5618
+        "ndcg_at_10": 0.4114
       },
       "hybrid": {
-        "precision_at_5": 0.8,
-        "precision_at_10": 0.6,
-        "recall_at_5": 0.4,
-        "recall_at_10": 0.6,
+        "precision_at_5": 0.6,
+        "precision_at_10": 0.3,
+        "recall_at_5": 0.3,
+        "recall_at_10": 0.3,
         "mrr_at_10": 0.5,
-        "ndcg_at_10": 0.5294
+        "ndcg_at_10": 0.3207
       }
     },
     {
@@ -203,11 +203,11 @@
       "retrieved_count": 15,
       "lexical": {
         "precision_at_5": 0.4,
-        "precision_at_10": 0.3,
+        "precision_at_10": 0.2,
         "recall_at_5": 0.2,
-        "recall_at_10": 0.3,
+        "recall_at_10": 0.2,
         "mrr_at_10": 1,
-        "ndcg_at_10": 0.218
+        "ndcg_at_10": 0.1852
       },
       "dense": {
         "precision_at_5": 1,
@@ -574,28 +574,28 @@
       "ground_truth_count": 10,
       "retrieved_count": 15,
       "lexical": {
-        "precision_at_5": 0.8,
-        "precision_at_10": 0.7,
-        "recall_at_5": 0.4,
-        "recall_at_10": 0.7,
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.3,
+        "recall_at_5": 0.2,
+        "recall_at_10": 0.3,
         "mrr_at_10": 1,
-        "ndcg_at_10": 0.5243
+        "ndcg_at_10": 0.4831
       },
       "dense": {
-        "precision_at_5": 1,
-        "precision_at_10": 0.7,
-        "recall_at_5": 0.5,
-        "recall_at_10": 0.7,
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.3,
+        "recall_at_5": 0.2,
+        "recall_at_10": 0.3,
         "mrr_at_10": 1,
-        "ndcg_at_10": 0.4732
+        "ndcg_at_10": 0.4872
       },
       "hybrid": {
-        "precision_at_5": 0.8,
-        "precision_at_10": 0.7,
-        "recall_at_5": 0.4,
-        "recall_at_10": 0.7,
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.3,
+        "recall_at_5": 0.2,
+        "recall_at_10": 0.3,
         "mrr_at_10": 1,
-        "ndcg_at_10": 0.4681
+        "ndcg_at_10": 0.4921
       }
     },
     {
@@ -605,28 +605,28 @@
       "ground_truth_count": 10,
       "retrieved_count": 15,
       "lexical": {
-        "precision_at_5": 0.4,
+        "precision_at_5": 0.2,
         "precision_at_10": 0.2,
-        "recall_at_5": 0.2,
+        "recall_at_5": 0.1,
         "recall_at_10": 0.2,
-        "mrr_at_10": 1,
-        "ndcg_at_10": 0.1852
+        "mrr_at_10": 0.5,
+        "ndcg_at_10": 0.1121
       },
       "dense": {
-        "precision_at_5": 0.6,
-        "precision_at_10": 0.6,
-        "recall_at_5": 0.3,
-        "recall_at_10": 0.6,
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.2,
         "mrr_at_10": 1,
-        "ndcg_at_10": 0.4334
+        "ndcg_at_10": 0.2349
       },
       "hybrid": {
-        "precision_at_5": 0.4,
-        "precision_at_10": 0.3,
-        "recall_at_5": 0.2,
-        "recall_at_10": 0.3,
-        "mrr_at_10": 1,
-        "ndcg_at_10": 0.2257
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.1,
+        "mrr_at_10": 0.5,
+        "ndcg_at_10": 0.0717
       }
     },
     {
@@ -636,28 +636,28 @@
       "ground_truth_count": 10,
       "retrieved_count": 15,
       "lexical": {
-        "precision_at_5": 0.4,
-        "precision_at_10": 0.7,
-        "recall_at_5": 0.2,
-        "recall_at_10": 0.7,
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.2,
         "mrr_at_10": 0.25,
-        "ndcg_at_10": 0.4266
+        "ndcg_at_10": 0.1703
       },
       "dense": {
-        "precision_at_5": 1,
-        "precision_at_10": 1,
-        "recall_at_5": 0.5,
-        "recall_at_10": 1,
-        "mrr_at_10": 1,
-        "ndcg_at_10": 0.799
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.2,
+        "recall_at_10": 0.2,
+        "mrr_at_10": 0.5,
+        "ndcg_at_10": 0.2184
       },
       "hybrid": {
-        "precision_at_5": 0.8,
-        "precision_at_10": 0.8,
-        "recall_at_5": 0.4,
-        "recall_at_10": 0.8,
-        "mrr_at_10": 1,
-        "ndcg_at_10": 0.7133
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.2,
+        "recall_at_10": 0.2,
+        "mrr_at_10": 0.5,
+        "ndcg_at_10": 0.242
       }
     },
     {
@@ -668,96 +668,96 @@
       "retrieved_count": 15,
       "lexical": {
         "precision_at_5": 0.2,
-        "precision_at_10": 0.3,
+        "precision_at_10": 0.2,
         "recall_at_5": 0.1,
-        "recall_at_10": 0.3,
-        "mrr_at_10": 1,
-        "ndcg_at_10": 0.2678
+        "recall_at_10": 0.2,
+        "mrr_at_10": 0.2,
+        "ndcg_at_10": 0.1424
       },
       "dense": {
         "precision_at_5": 0.2,
-        "precision_at_10": 0.2,
+        "precision_at_10": 0.1,
         "recall_at_5": 0.1,
-        "recall_at_10": 0.2,
-        "mrr_at_10": 0.5,
-        "ndcg_at_10": 0.1742
+        "recall_at_10": 0.1,
+        "mrr_at_10": 0.25,
+        "ndcg_at_10": 0.0489
       },
       "hybrid": {
-        "precision_at_5": 0.4,
-        "precision_at_10": 0.2,
-        "recall_at_5": 0.2,
-        "recall_at_10": 0.2,
-        "mrr_at_10": 1,
-        "ndcg_at_10": 0.2454
+        "precision_at_5": 0,
+        "precision_at_10": 0.3,
+        "recall_at_5": 0,
+        "recall_at_10": 0.3,
+        "mrr_at_10": 0.1429,
+        "ndcg_at_10": 0.1065
       }
     },
     {
       "query_id": "eval-attr-05",
       "query": "organic jute geometric rug runner",
       "query_type": "attribute_combination",
-      "ground_truth_count": 5,
+      "ground_truth_count": 9,
       "retrieved_count": 15,
       "lexical": {
         "precision_at_5": 0.2,
-        "precision_at_10": 0.5,
-        "recall_at_5": 0.2,
-        "recall_at_10": 1,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.1111,
+        "recall_at_10": 0.2222,
         "mrr_at_10": 1,
-        "ndcg_at_10": 0.7556
+        "ndcg_at_10": 0.1566
       },
       "dense": {
-        "precision_at_5": 1,
-        "precision_at_10": 0.5,
-        "recall_at_5": 1,
-        "recall_at_10": 1,
-        "mrr_at_10": 1,
-        "ndcg_at_10": 0.9686
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.2222,
+        "recall_at_10": 0.2222,
+        "mrr_at_10": 0.25,
+        "ndcg_at_10": 0.096
       },
       "hybrid": {
-        "precision_at_5": 1,
-        "precision_at_10": 0.5,
-        "recall_at_5": 1,
-        "recall_at_10": 1,
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.2222,
+        "recall_at_10": 0.2222,
         "mrr_at_10": 1,
-        "ndcg_at_10": 0.9808
+        "ndcg_at_10": 0.1761
       }
     },
     {
       "query_id": "eval-price-01",
       "query": "dining table under 20000 rupees",
       "query_type": "price_constraint",
-      "ground_truth_count": 7,
+      "ground_truth_count": 9,
       "retrieved_count": 7,
       "lexical": {
-        "precision_at_5": 1,
-        "precision_at_10": 0.7,
-        "recall_at_5": 0.7143,
-        "recall_at_10": 1,
-        "mrr_at_10": 1,
-        "ndcg_at_10": 0.8195
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0.1111,
+        "recall_at_10": 0.1111,
+        "mrr_at_10": 0.5,
+        "ndcg_at_10": 0.2223
       },
       "dense": {
-        "precision_at_5": 1,
-        "precision_at_10": 0.7,
-        "recall_at_5": 0.7143,
-        "recall_at_10": 1,
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0.1111,
+        "recall_at_10": 0.1111,
         "mrr_at_10": 1,
-        "ndcg_at_10": 0.9247
+        "ndcg_at_10": 0.3523
       },
       "hybrid": {
-        "precision_at_5": 1,
-        "precision_at_10": 0.7,
-        "recall_at_5": 0.7143,
-        "recall_at_10": 1,
-        "mrr_at_10": 1,
-        "ndcg_at_10": 0.837
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0.1111,
+        "recall_at_10": 0.1111,
+        "mrr_at_10": 0.5,
+        "ndcg_at_10": 0.2223
       }
     },
     {
       "query_id": "eval-price-02",
       "query": "affordable desk lamp under 3000",
       "query_type": "price_constraint",
-      "ground_truth_count": 4,
+      "ground_truth_count": 5,
       "retrieved_count": 0,
       "lexical": {
         "precision_at_5": 0,
@@ -791,59 +791,59 @@
       "ground_truth_count": 10,
       "retrieved_count": 13,
       "lexical": {
-        "precision_at_5": 0.8,
-        "precision_at_10": 0.7,
-        "recall_at_5": 0.4,
-        "recall_at_10": 0.7,
-        "mrr_at_10": 1,
-        "ndcg_at_10": 0.7675
+        "precision_at_5": 0,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0,
+        "recall_at_10": 0.1,
+        "mrr_at_10": 0.1111,
+        "ndcg_at_10": 0.0342
       },
       "dense": {
-        "precision_at_5": 0.8,
-        "precision_at_10": 0.8,
-        "recall_at_5": 0.4,
-        "recall_at_10": 0.8,
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.2,
+        "recall_at_10": 0.2,
         "mrr_at_10": 1,
-        "ndcg_at_10": 0.7998
+        "ndcg_at_10": 0.3896
       },
       "hybrid": {
-        "precision_at_5": 1,
-        "precision_at_10": 0.7,
-        "recall_at_5": 0.5,
-        "recall_at_10": 0.7,
-        "mrr_at_10": 1,
-        "ndcg_at_10": 0.7254
+        "precision_at_5": 0,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0,
+        "recall_at_10": 0.2,
+        "mrr_at_10": 0.1667,
+        "ndcg_at_10": 0.154
       }
     },
     {
       "query_id": "eval-price-04",
       "query": "cheap bedside runner rug under 5000",
       "query_type": "price_constraint",
-      "ground_truth_count": 4,
+      "ground_truth_count": 2,
       "retrieved_count": 4,
       "lexical": {
-        "precision_at_5": 0.8,
-        "precision_at_10": 0.4,
-        "recall_at_5": 1,
-        "recall_at_10": 1,
-        "mrr_at_10": 1,
-        "ndcg_at_10": 0.8331
+        "precision_at_5": 0,
+        "precision_at_10": 0,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "mrr_at_10": 0,
+        "ndcg_at_10": 0
       },
       "dense": {
-        "precision_at_5": 0.8,
-        "precision_at_10": 0.4,
-        "recall_at_5": 1,
-        "recall_at_10": 1,
-        "mrr_at_10": 1,
-        "ndcg_at_10": 0.9413
+        "precision_at_5": 0,
+        "precision_at_10": 0,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "mrr_at_10": 0,
+        "ndcg_at_10": 0
       },
       "hybrid": {
-        "precision_at_5": 0.8,
-        "precision_at_10": 0.4,
-        "recall_at_5": 1,
-        "recall_at_10": 1,
-        "mrr_at_10": 1,
-        "ndcg_at_10": 0.8331
+        "precision_at_5": 0,
+        "precision_at_10": 0,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "mrr_at_10": 0,
+        "ndcg_at_10": 0
       }
     },
     {
@@ -854,27 +854,27 @@
       "retrieved_count": 15,
       "lexical": {
         "precision_at_5": 0.4,
-        "precision_at_10": 0.5,
+        "precision_at_10": 0.3,
         "recall_at_5": 0.2,
-        "recall_at_10": 0.5,
+        "recall_at_10": 0.3,
         "mrr_at_10": 0.5,
-        "ndcg_at_10": 0.3929
+        "ndcg_at_10": 0.2512
       },
       "dense": {
-        "precision_at_5": 0.2,
-        "precision_at_10": 0.3,
-        "recall_at_5": 0.1,
-        "recall_at_10": 0.3,
-        "mrr_at_10": 0.2,
-        "ndcg_at_10": 0.1856
+        "precision_at_5": 0,
+        "precision_at_10": 0,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "mrr_at_10": 0,
+        "ndcg_at_10": 0
       },
       "hybrid": {
-        "precision_at_5": 0.4,
-        "precision_at_10": 0.4,
-        "recall_at_5": 0.2,
-        "recall_at_10": 0.4,
-        "mrr_at_10": 0.3333,
-        "ndcg_at_10": 0.3687
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.2,
+        "mrr_at_10": 0.25,
+        "ndcg_at_10": 0.1625
       }
     },
     {
@@ -1048,11 +1048,11 @@
       },
       "dense": {
         "precision_at_5": 0.2,
-        "precision_at_10": 0.3,
+        "precision_at_10": 0.2,
         "recall_at_5": 0.1,
-        "recall_at_10": 0.3,
+        "recall_at_10": 0.2,
         "mrr_at_10": 0.5,
-        "ndcg_at_10": 0.2288
+        "ndcg_at_10": 0.193
       },
       "hybrid": {
         "precision_at_5": 0.2,
@@ -1098,31 +1098,31 @@
       "query_id": "eval-missp-03",
       "query": "modren beig sofa couch",
       "query_type": "misspellings",
-      "ground_truth_count": 6,
+      "ground_truth_count": 8,
       "retrieved_count": 15,
       "lexical": {
-        "precision_at_5": 1,
-        "precision_at_10": 0.6,
-        "recall_at_5": 0.8333,
-        "recall_at_10": 1,
-        "mrr_at_10": 1,
-        "ndcg_at_10": 0.7653
+        "precision_at_5": 0.6,
+        "precision_at_10": 0.4,
+        "recall_at_5": 0.375,
+        "recall_at_10": 0.5,
+        "mrr_at_10": 0.5,
+        "ndcg_at_10": 0.5224
       },
       "dense": {
         "precision_at_5": 0,
-        "precision_at_10": 0.2,
+        "precision_at_10": 0.1,
         "recall_at_5": 0,
-        "recall_at_10": 0.3333,
+        "recall_at_10": 0.125,
         "mrr_at_10": 0.1667,
-        "ndcg_at_10": 0.1794
+        "ndcg_at_10": 0.1301
       },
       "hybrid": {
-        "precision_at_5": 0.8,
-        "precision_at_10": 0.6,
-        "recall_at_5": 0.6667,
-        "recall_at_10": 1,
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.3,
+        "recall_at_5": 0.25,
+        "recall_at_10": 0.375,
         "mrr_at_10": 1,
-        "ndcg_at_10": 0.9376
+        "ndcg_at_10": 0.5608
       }
     },
     {
@@ -1132,6 +1132,14 @@
       "ground_truth_count": 7,
       "retrieved_count": 15,
       "lexical": {
+        "precision_at_5": 0,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0,
+        "recall_at_10": 0.1429,
+        "mrr_at_10": 0.1667,
+        "ndcg_at_10": 0.0451
+      },
+      "dense": {
         "precision_at_5": 0.2,
         "precision_at_10": 0.1,
         "recall_at_5": 0.1429,
@@ -1139,36 +1147,28 @@
         "mrr_at_10": 1,
         "ndcg_at_10": 0.3798
       },
-      "dense": {
-        "precision_at_5": 0.4,
-        "precision_at_10": 0.2,
-        "recall_at_5": 0.2857,
-        "recall_at_10": 0.2857,
-        "mrr_at_10": 1,
-        "ndcg_at_10": 0.4596
-      },
       "hybrid": {
         "precision_at_5": 0.2,
-        "precision_at_10": 0.3,
+        "precision_at_10": 0.2,
         "recall_at_5": 0.1429,
-        "recall_at_10": 0.4286,
-        "mrr_at_10": 0.5,
-        "ndcg_at_10": 0.3094
+        "recall_at_10": 0.2857,
+        "mrr_at_10": 0.2,
+        "ndcg_at_10": 0.1633
       }
     },
     {
       "query_id": "eval-multi-01",
       "query": "NordicCraft solid oak desk under 25000 in natural warm oak",
       "query_type": "multiple_constraints",
-      "ground_truth_count": 1,
+      "ground_truth_count": 2,
       "retrieved_count": 15,
       "lexical": {
         "precision_at_5": 0.2,
         "precision_at_10": 0.1,
-        "recall_at_5": 1,
-        "recall_at_10": 1,
+        "recall_at_5": 0.5,
+        "recall_at_10": 0.5,
         "mrr_at_10": 0.5,
-        "ndcg_at_10": 0.6309
+        "ndcg_at_10": 0.3869
       },
       "dense": {
         "precision_at_5": 0,
@@ -1182,71 +1182,71 @@
         "precision_at_5": 0,
         "precision_at_10": 0.1,
         "recall_at_5": 0,
-        "recall_at_10": 1,
+        "recall_at_10": 0.5,
         "mrr_at_10": 0.125,
-        "ndcg_at_10": 0.3155
+        "ndcg_at_10": 0.1934
       }
     },
     {
       "query_id": "eval-multi-02",
       "query": "UrbanWood sheesham dining table under 30000 with 6 seats",
       "query_type": "multiple_constraints",
-      "ground_truth_count": 2,
+      "ground_truth_count": 4,
       "retrieved_count": 15,
       "lexical": {
         "precision_at_5": 0.4,
         "precision_at_10": 0.2,
-        "recall_at_5": 1,
-        "recall_at_10": 1,
-        "mrr_at_10": 1,
-        "ndcg_at_10": 0.9197
+        "recall_at_5": 0.5,
+        "recall_at_10": 0.5,
+        "mrr_at_10": 0.3333,
+        "ndcg_at_10": 0.3899
       },
       "dense": {
-        "precision_at_5": 0.4,
+        "precision_at_5": 0.2,
         "precision_at_10": 0.2,
-        "recall_at_5": 1,
-        "recall_at_10": 1,
-        "mrr_at_10": 0.5,
-        "ndcg_at_10": 0.6509
+        "recall_at_5": 0.25,
+        "recall_at_10": 0.5,
+        "mrr_at_10": 0.25,
+        "ndcg_at_10": 0.3217
       },
       "hybrid": {
-        "precision_at_5": 0.4,
+        "precision_at_5": 0.2,
         "precision_at_10": 0.2,
-        "recall_at_5": 1,
-        "recall_at_10": 1,
-        "mrr_at_10": 0.5,
-        "ndcg_at_10": 0.6509
+        "recall_at_5": 0.25,
+        "recall_at_10": 0.5,
+        "mrr_at_10": 0.25,
+        "ndcg_at_10": 0.3359
       }
     },
     {
       "query_id": "eval-multi-03",
       "query": "Minimalia dimmable black floor lamp under 6000",
       "query_type": "multiple_constraints",
-      "ground_truth_count": 5,
+      "ground_truth_count": 3,
       "retrieved_count": 15,
       "lexical": {
-        "precision_at_5": 0.6,
-        "precision_at_10": 0.5,
-        "recall_at_5": 0.6,
-        "recall_at_10": 1,
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.6667,
+        "recall_at_10": 0.6667,
         "mrr_at_10": 1,
-        "ndcg_at_10": 0.7503
+        "ndcg_at_10": 0.6508
       },
       "dense": {
-        "precision_at_5": 0.6,
-        "precision_at_10": 0.4,
-        "recall_at_5": 0.6,
-        "recall_at_10": 0.8,
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.3,
+        "recall_at_5": 0.6667,
+        "recall_at_10": 1,
         "mrr_at_10": 1,
-        "ndcg_at_10": 0.6101
+        "ndcg_at_10": 0.807
       },
       "hybrid": {
-        "precision_at_5": 0.6,
-        "precision_at_10": 0.4,
-        "recall_at_5": 0.6,
-        "recall_at_10": 0.8,
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.6667,
+        "recall_at_10": 0.6667,
         "mrr_at_10": 1,
-        "ndcg_at_10": 0.7479
+        "ndcg_at_10": 0.7039
       }
     },
     {
@@ -1260,24 +1260,24 @@
         "precision_at_10": 0.1,
         "recall_at_5": 0,
         "recall_at_10": 0.1,
-        "mrr_at_10": 0.1,
-        "ndcg_at_10": 0.0985
+        "mrr_at_10": 0.125,
+        "ndcg_at_10": 0.1075
       },
       "dense": {
-        "precision_at_5": 0.6,
-        "precision_at_10": 0.5,
-        "recall_at_5": 0.3,
-        "recall_at_10": 0.5,
-        "mrr_at_10": 1,
-        "ndcg_at_10": 0.3809
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.2,
+        "mrr_at_10": 0.25,
+        "ndcg_at_10": 0.1564
       },
       "hybrid": {
-        "precision_at_5": 0.6,
-        "precision_at_10": 0.5,
-        "recall_at_5": 0.3,
-        "recall_at_10": 0.5,
-        "mrr_at_10": 0.5,
-        "ndcg_at_10": 0.3098
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.1,
+        "mrr_at_10": 0.3333,
+        "ndcg_at_10": 0.1703
       }
     },
     {
@@ -1287,28 +1287,28 @@
       "ground_truth_count": 10,
       "retrieved_count": 15,
       "lexical": {
-        "precision_at_5": 0.4,
-        "precision_at_10": 0.3,
-        "recall_at_5": 0.2,
-        "recall_at_10": 0.3,
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.1,
         "mrr_at_10": 1,
-        "ndcg_at_10": 0.4971
+        "ndcg_at_10": 0.3407
       },
       "dense": {
         "precision_at_5": 0.2,
-        "precision_at_10": 0.4,
+        "precision_at_10": 0.1,
         "recall_at_5": 0.1,
-        "recall_at_10": 0.4,
+        "recall_at_10": 0.1,
         "mrr_at_10": 0.3333,
-        "ndcg_at_10": 0.2795
+        "ndcg_at_10": 0.1703
       },
       "hybrid": {
-        "precision_at_5": 0.4,
-        "precision_at_10": 0.4,
-        "recall_at_5": 0.2,
-        "recall_at_10": 0.4,
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.1,
         "mrr_at_10": 1,
-        "ndcg_at_10": 0.5488
+        "ndcg_at_10": 0.3407
       }
     },
     {
@@ -1318,28 +1318,28 @@
       "ground_truth_count": 10,
       "retrieved_count": 15,
       "lexical": {
-        "precision_at_5": 0.2,
-        "precision_at_10": 0.1,
-        "recall_at_5": 0.1,
-        "recall_at_10": 0.1,
-        "mrr_at_10": 0.2,
-        "ndcg_at_10": 0.0439
+        "precision_at_5": 0,
+        "precision_at_10": 0,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "mrr_at_10": 0,
+        "ndcg_at_10": 0
       },
       "dense": {
-        "precision_at_5": 0.2,
-        "precision_at_10": 0.1,
-        "recall_at_5": 0.1,
-        "recall_at_10": 0.1,
-        "mrr_at_10": 1,
-        "ndcg_at_10": 0.1136
+        "precision_at_5": 0,
+        "precision_at_10": 0,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "mrr_at_10": 0,
+        "ndcg_at_10": 0
       },
       "hybrid": {
-        "precision_at_5": 0.2,
-        "precision_at_10": 0.1,
-        "recall_at_5": 0.1,
-        "recall_at_10": 0.1,
-        "mrr_at_10": 1,
-        "ndcg_at_10": 0.1136
+        "precision_at_5": 0,
+        "precision_at_10": 0,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "mrr_at_10": 0,
+        "ndcg_at_10": 0
       }
     },
     {
@@ -1380,183 +1380,183 @@
       "ground_truth_count": 10,
       "retrieved_count": 15,
       "lexical": {
+        "precision_at_5": 0.6,
+        "precision_at_10": 0.3,
+        "recall_at_5": 0.3,
+        "recall_at_10": 0.3,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.4414
+      },
+      "dense": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.2,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.4392
+      },
+      "hybrid": {
         "precision_at_5": 0.4,
         "precision_at_10": 0.2,
         "recall_at_5": 0.2,
         "recall_at_10": 0.2,
         "mrr_at_10": 1,
-        "ndcg_at_10": 0.4124
-      },
-      "dense": {
-        "precision_at_5": 0.4,
-        "precision_at_10": 0.3,
-        "recall_at_5": 0.2,
-        "recall_at_10": 0.3,
-        "mrr_at_10": 1,
-        "ndcg_at_10": 0.5108
-      },
-      "hybrid": {
-        "precision_at_5": 0.6,
-        "precision_at_10": 0.6,
-        "recall_at_5": 0.3,
-        "recall_at_10": 0.6,
-        "mrr_at_10": 1,
-        "ndcg_at_10": 0.6892
+        "ndcg_at_10": 0.511
       }
     },
     {
       "query_id": "eval-alt-02",
       "query": "Find a similar dining table but cheaper",
       "query_type": "natural_language_description",
-      "ground_truth_count": 7,
+      "ground_truth_count": 9,
       "retrieved_count": 15,
       "lexical": {
-        "precision_at_5": 0.4,
-        "precision_at_10": 0.2,
-        "recall_at_5": 0.2857,
-        "recall_at_10": 0.2857,
-        "mrr_at_10": 1,
-        "ndcg_at_10": 0.3662
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.3,
+        "recall_at_5": 0.1111,
+        "recall_at_10": 0.3333,
+        "mrr_at_10": 0.5,
+        "ndcg_at_10": 0.2915
       },
       "dense": {
-        "precision_at_5": 0.4,
-        "precision_at_10": 0.2,
-        "recall_at_5": 0.2857,
-        "recall_at_10": 0.2857,
-        "mrr_at_10": 1,
-        "ndcg_at_10": 0.3662
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0.1111,
+        "recall_at_10": 0.1111,
+        "mrr_at_10": 0.25,
+        "ndcg_at_10": 0.0506
       },
       "hybrid": {
-        "precision_at_5": 0.4,
-        "precision_at_10": 0.2,
-        "recall_at_5": 0.2857,
-        "recall_at_10": 0.2857,
-        "mrr_at_10": 1,
-        "ndcg_at_10": 0.3662
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.3,
+        "recall_at_5": 0.1111,
+        "recall_at_10": 0.3333,
+        "mrr_at_10": 0.5,
+        "ndcg_at_10": 0.2915
       }
     },
     {
       "query_id": "eval-alt-03",
       "query": "alternatives to solid wood desk engineered wood under 12000",
       "query_type": "multiple_constraints",
-      "ground_truth_count": 9,
+      "ground_truth_count": 10,
       "retrieved_count": 9,
       "lexical": {
-        "precision_at_5": 1,
-        "precision_at_10": 0.9,
-        "recall_at_5": 0.5556,
-        "recall_at_10": 1,
-        "mrr_at_10": 1,
-        "ndcg_at_10": 0.856
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.1,
+        "mrr_at_10": 0.2,
+        "ndcg_at_10": 0.1318
       },
       "dense": {
-        "precision_at_5": 1,
-        "precision_at_10": 0.9,
-        "recall_at_5": 0.5556,
-        "recall_at_10": 1,
-        "mrr_at_10": 1,
-        "ndcg_at_10": 0.7747
+        "precision_at_5": 0,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0,
+        "recall_at_10": 0.1,
+        "mrr_at_10": 0.125,
+        "ndcg_at_10": 0.1075
       },
       "hybrid": {
-        "precision_at_5": 1,
-        "precision_at_10": 0.9,
-        "recall_at_5": 0.5556,
-        "recall_at_10": 1,
-        "mrr_at_10": 1,
-        "ndcg_at_10": 0.8272
+        "precision_at_5": 0,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0,
+        "recall_at_10": 0.1,
+        "mrr_at_10": 0.1429,
+        "ndcg_at_10": 0.1136
       }
     },
     {
       "query_id": "eval-shelf-01",
       "query": "5-tier modular bookshelf for living room library",
       "query_type": "attribute_combination",
-      "ground_truth_count": 7,
+      "ground_truth_count": 8,
       "retrieved_count": 15,
       "lexical": {
-        "precision_at_5": 1,
-        "precision_at_10": 0.7,
-        "recall_at_5": 0.7143,
-        "recall_at_10": 1,
-        "mrr_at_10": 1,
-        "ndcg_at_10": 0.8137
+        "precision_at_5": 0,
+        "precision_at_10": 0,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "mrr_at_10": 0,
+        "ndcg_at_10": 0
       },
       "dense": {
-        "precision_at_5": 1,
-        "precision_at_10": 0.7,
-        "recall_at_5": 0.7143,
-        "recall_at_10": 1,
-        "mrr_at_10": 1,
-        "ndcg_at_10": 0.9304
+        "precision_at_5": 0,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0,
+        "recall_at_10": 0.125,
+        "mrr_at_10": 0.1,
+        "ndcg_at_10": 0.1056
       },
       "hybrid": {
-        "precision_at_5": 1,
-        "precision_at_10": 0.7,
-        "recall_at_5": 0.7143,
-        "recall_at_10": 1,
-        "mrr_at_10": 1,
-        "ndcg_at_10": 0.9247
+        "precision_at_5": 0,
+        "precision_at_10": 0,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "mrr_at_10": 0,
+        "ndcg_at_10": 0
       }
     },
     {
       "query_id": "eval-acc-01",
       "query": "handcrafted ceramic vase tabletop decor",
       "query_type": "attribute_combination",
-      "ground_truth_count": 9,
+      "ground_truth_count": 8,
       "retrieved_count": 15,
       "lexical": {
-        "precision_at_5": 0.8,
-        "precision_at_10": 0.4,
-        "recall_at_5": 0.4444,
-        "recall_at_10": 0.4444,
-        "mrr_at_10": 1,
-        "ndcg_at_10": 0.3895
+        "precision_at_5": 0,
+        "precision_at_10": 0,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "mrr_at_10": 0,
+        "ndcg_at_10": 0
       },
       "dense": {
-        "precision_at_5": 1,
-        "precision_at_10": 0.9,
-        "recall_at_5": 0.5556,
-        "recall_at_10": 1,
-        "mrr_at_10": 1,
-        "ndcg_at_10": 0.8949
+        "precision_at_5": 0,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0,
+        "recall_at_10": 0.25,
+        "mrr_at_10": 0.1667,
+        "ndcg_at_10": 0.1653
       },
       "hybrid": {
-        "precision_at_5": 0.8,
-        "precision_at_10": 0.6,
-        "recall_at_5": 0.4444,
-        "recall_at_10": 0.6667,
-        "mrr_at_10": 1,
-        "ndcg_at_10": 0.5992
+        "precision_at_5": 0,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0,
+        "recall_at_10": 0.125,
+        "mrr_at_10": 0.125,
+        "ndcg_at_10": 0.1152
       }
     },
     {
       "query_id": "eval-acc-02",
       "query": "travertine marble bookends and catchall tray",
       "query_type": "attribute_combination",
-      "ground_truth_count": 4,
+      "ground_truth_count": 6,
       "retrieved_count": 15,
       "lexical": {
-        "precision_at_5": 0.6,
-        "precision_at_10": 0.3,
-        "recall_at_5": 0.75,
-        "recall_at_10": 0.75,
-        "mrr_at_10": 1,
-        "ndcg_at_10": 0.752
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.3333,
+        "recall_at_10": 0.3333,
+        "mrr_at_10": 0.3333,
+        "ndcg_at_10": 0.2368
       },
       "dense": {
-        "precision_at_5": 0.8,
-        "precision_at_10": 0.4,
-        "recall_at_5": 1,
-        "recall_at_10": 1,
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.3333,
+        "recall_at_10": 0.3333,
         "mrr_at_10": 1,
-        "ndcg_at_10": 0.9604
+        "ndcg_at_10": 0.2855
       },
       "hybrid": {
-        "precision_at_5": 0.6,
-        "precision_at_10": 0.4,
-        "recall_at_5": 0.75,
-        "recall_at_10": 1,
-        "mrr_at_10": 1,
-        "ndcg_at_10": 0.929
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.3,
+        "recall_at_5": 0.1667,
+        "recall_at_10": 0.5,
+        "mrr_at_10": 0.5,
+        "ndcg_at_10": 0.3231
       }
     },
     {
@@ -1566,28 +1566,28 @@
       "ground_truth_count": 10,
       "retrieved_count": 15,
       "lexical": {
-        "precision_at_5": 0.6,
-        "precision_at_10": 0.5,
-        "recall_at_5": 0.3,
-        "recall_at_10": 0.5,
-        "mrr_at_10": 1,
-        "ndcg_at_10": 0.4806
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.2,
+        "mrr_at_10": 0.25,
+        "ndcg_at_10": 0.1625
       },
       "dense": {
-        "precision_at_5": 1,
-        "precision_at_10": 0.5,
-        "recall_at_5": 0.5,
-        "recall_at_10": 0.5,
-        "mrr_at_10": 1,
-        "ndcg_at_10": 0.562
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.1,
+        "mrr_at_10": 0.2,
+        "ndcg_at_10": 0.0439
       },
       "hybrid": {
-        "precision_at_5": 0.8,
-        "precision_at_10": 0.6,
-        "recall_at_5": 0.4,
-        "recall_at_10": 0.6,
-        "mrr_at_10": 1,
-        "ndcg_at_10": 0.6531
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.2,
+        "mrr_at_10": 0.25,
+        "ndcg_at_10": 0.1564
       }
     },
     {
