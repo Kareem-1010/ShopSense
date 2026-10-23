@@ -1,0 +1,1030 @@
+# MASTER BUILD PROMPT: SHOPSENSE
+## Production-Quality AI-Powered Product Search, Ranking & Recommendation Platform
+
+You are a principal software engineer, senior search/relevance engineer, AI/ML engineer, database architect, security engineer, UI/UX designer, QA engineer, and DevOps engineer working together.
+
+Your task is to DESIGN, IMPLEMENT, TEST, DOCUMENT, and PREPARE FOR DEPLOYMENT a complete full-stack project called **ShopSense — Intelligent Product Discovery & Recommendation Engine**.
+
+Do not deliver merely a plan, mockup, tutorial, collection of disconnected snippets, or frontend prototype. Build a cohesive, working software system with a real backend, persistent database, actual search algorithms, measurable retrieval quality, automated tests, and a professional user interface.
+
+Work incrementally. Inspect the repository and execution environment first, implement the application in verifiable stages, run available checks, fix errors, and maintain a clear list of completed and remaining work.
+
+Never claim a feature is working unless its implementation and relevant verification support that claim.
+
+---
+
+# 1. PROJECT OBJECTIVE
+
+Build an intelligent product discovery platform for furniture and home goods that helps users find relevant products using natural-language queries, structured filters, semantic retrieval, hybrid search, relevance ranking, and personalized or item-to-item recommendations.
+
+Example queries:
+
+- "A compact wooden desk for a small apartment under 15000 rupees"
+- "Comfortable beige sofa for a modern living room"
+- "Storage bed with drawers for a small bedroom"
+- "Find a similar dining table but cheaper"
+- "Show alternatives to this chair with better reviews"
+- "Minimalist lamps suitable for a warm reading corner"
+
+The application should interpret the user's intent, retrieve suitable products, rank them, explain important ranking factors, and allow users to refine results.
+
+The goal is to demonstrate real software engineering and information retrieval skills relevant to software engineering roles involving product search, recommendations, backend APIs, data systems, and applied AI.
+
+This is NOT a generic chatbot project.
+
+The core product must work even when an external LLM provider is unavailable. Search and recommendations must have deterministic fallback behavior.
+
+# 2. NON-NEGOTIABLE ENGINEERING RULES
+
+1. Inspect the current repository before creating or overwriting files.
+2. Preserve existing user work unless a change is explicitly justified.
+3. Never leave core functionality as TODOs, fake implementations, hardcoded success responses, or simulated API results.
+4. Never fabricate benchmark results, latency numbers, accuracy, test coverage, or deployment status.
+5. Do not hardcode API keys, passwords, database credentials, or other secrets.
+6. Do not require a paid LLM API for core search functionality.
+7. Use a reproducible seed dataset and provide an importable data-ingestion pipeline.
+8. Make all important features usable through the frontend and independently testable through APIs.
+9. Use proper validation, error handling, logging, timeouts, and pagination.
+10. Implement actual automated tests and run them wherever the environment permits.
+11. Keep a working README and update it when implementation decisions change.
+12. Do not silently change the technology stack or omit difficult requirements. Explain constraints and propose the smallest viable alternative.
+13. Do not expose internal reasoning or private chain-of-thought. Document implementation decisions and concise technical rationales.
+14. Never invent real product prices, stock availability, reviews, retailer partnerships, or external product data. Label synthetic catalog data as synthetic.
+15. If you cannot execute a command or access a service, report the limitation explicitly instead of claiming successful verification.
+
+# 3. REQUIRED TECHNOLOGY STACK
+
+Use the following stack unless a concrete compatibility issue requires a documented alternative.
+
+## Frontend
+- React
+- TypeScript with strict type checking
+- Vite
+- Tailwind CSS
+- Accessible component primitives or a well-maintained component library
+- TanStack Query for API state and caching
+- React Router
+- React Hook Form and Zod for forms and client-side validation
+- A consistent icon library such as Lucide
+- Vitest and React Testing Library
+
+## Backend
+- Python 3.11 or another supported Python version compatible with all selected dependencies
+- FastAPI
+- Pydantic v2
+- SQLAlchemy 2.x
+- Alembic migrations
+- Psycopg 3 or another compatible PostgreSQL driver
+- pytest
+- HTTPX for API integration tests
+
+## Database and retrieval
+- PostgreSQL
+- pgvector
+- PostgreSQL full-text search using tsvector and tsquery
+- Dense vector retrieval using cosine similarity
+- Reciprocal Rank Fusion (RRF) for combining independent ranked lists
+- A configurable embedding provider
+- A deterministic lexical fallback
+
+## Infrastructure
+- Docker
+- Docker Compose
+- Separate frontend and backend services
+- PostgreSQL with pgvector support
+- Health checks
+- Environment-based configuration
+- GitHub Actions CI
+- Ruff for Python linting and formatting
+- mypy or an equivalent static type check for critical backend code
+- ESLint and TypeScript checks for the frontend
+
+Do not introduce unnecessary microservices. Begin with a modular monolith and clear boundaries.
+
+Pin dependency versions to compatible, supported releases and generate a lockfile where the chosen package manager supports it.
+
+# 4. PRODUCT EXPERIENCE AND DESIGN
+
+Create a polished, modern home-goods shopping experience.
+
+The UI should feel like a professional, editorial e-commerce product rather than a generic admin template.
+
+## Design direction
+- Clean, spacious layout
+- Neutral warm backgrounds
+- Carefully selected accent color
+- Strong typography hierarchy
+- Consistent spacing and responsive grids
+- Subtle hover states and transitions
+- Clear focus states
+- High-quality product imagery where legally and technically available
+- Excellent mobile, tablet, and desktop behavior
+- Loading skeletons and meaningful empty/error states
+- Keyboard accessibility
+- Semantic HTML and accessible labels
+- Respect reduced-motion preferences
+
+Avoid excessive gradients, meaningless animated counters, fake reviews, decorative charts without real data, and oversized dashboards that distract from product discovery.
+
+## Required pages
+
+### A. Home / Product Discovery
+- Brand header and navigation
+- Prominent natural-language search
+- Example queries that populate the search box
+- Category navigation
+- Curated collections based on the local dataset
+- Trending or popular products derived from actual seeded events or documented demo rules
+- Recently viewed items stored appropriately
+- Clear disclosure that the catalog is a demo dataset
+
+### B. Search Results
+- Query input with debounced suggestions where implemented
+- Product cards with image, title, price, category, brand, and rating if available
+- Sort options: relevance, price ascending, price descending, rating, popularity
+- Filters: category, price range, brand, color, material, dimensions, rating, and availability where supported by the dataset
+- Active filter chips and clear-all functionality
+- Pagination or robust cursor-based loading
+- Result count
+- Search timing measured at the backend
+- Helpful empty states and query refinement suggestions
+- Optional semantic/keyword mode indicator
+
+### C. Product Details
+- Product image gallery
+- Product description and attributes
+- Price and availability sourced from the database
+- Dimensions and materials where present
+- Similar products
+- "Why this result?" explanation showing actual ranking signals
+- Related search queries
+- Clear indication of missing product attributes
+
+### D. Recommendations
+- "Similar products" based on content and product attributes
+- "More like this" interaction
+- Optional personalized recommendations based on recorded user interactions
+- A cold-start fallback for users with no history
+- A clear explanation of recommendation reasons
+
+### E. Search Evaluation / Engineering Dashboard
+Build a development-facing page that displays genuine evaluation runs and recorded measurements:
+- Dataset size
+- Evaluation query count
+- Recall@K
+- Precision@K
+- MRR@K
+- NDCG@K
+- Baseline versus hybrid retrieval results
+- Measured API latency percentiles where sufficient observations exist
+- Evaluation run timestamp and configuration
+- Clear warnings when no evaluation has been run
+
+Do not generate random metrics or show hardcoded charts pretending to be real measurements.
+
+### F. Optional comparison feature
+Allow users to compare two or three products across price, dimensions, materials, rating, and relevant attributes.
+
+This feature is secondary to search quality.
+
+# 5. DATA MODEL AND DATABASE DESIGN
+
+Design a normalized relational model with appropriate indexes and constraints.
+
+At minimum, implement:
+
+## Products
+- id
+- slug
+- title
+- description
+- category
+- brand
+- price
+- currency
+- image URLs or local image references
+- color
+- material
+- width, height, and depth when applicable
+- average rating and rating count only if supported by data
+- availability status when known
+- searchable text
+- created_at and updated_at
+
+Use Decimal or NUMERIC for monetary values. Never use binary floating-point arithmetic for prices.
+
+## Product embeddings
+- product_id
+- embedding model identifier
+- vector embedding
+- embedding dimensions
+- embedding generation timestamp
+
+Ensure the vector dimension is consistent with the selected embedding model. Handle model upgrades deliberately.
+
+## Search events
+- query text
+- normalized query or query hash where appropriate
+- filters
+- retrieval mode
+- result product identifiers
+- timestamp
+- measured latency
+- anonymous session identifier where needed
+- optional clicked product and position
+
+Minimize collection of personal data. Do not store sensitive user information.
+
+## User interactions
+- session or pseudonymous user identifier
+- product identifier
+- interaction type: view, click, save, or other supported event
+- timestamp
+
+Use a simple privacy-conscious session approach for the demo. Do not require unnecessary personal information.
+
+## Evaluation records
+- evaluation run ID
+- dataset and benchmark version
+- configuration
+- metric values
+- run timestamp
+- baseline and candidate identifiers
+
+Add foreign keys, uniqueness constraints, appropriate indexes, and Alembic migrations.
+
+Document the relationship between tables and important query patterns.
+
+# 6. DATASET AND INGESTION PIPELINE
+
+Create a reproducible, clearly labeled synthetic furniture and home-goods catalog.
+
+Start with at least 500 products if feasible; target 1,000 or more for a substantial demo. These are dataset-size targets, not achieved results until verified.
+
+Include diverse products across:
+- Desks and office furniture
+- Chairs
+- Sofas
+- Beds and mattresses
+- Storage
+- Dining furniture
+- Lighting
+- Rugs
+- Shelves
+- Home accessories
+
+Use varied titles, descriptions, categories, prices, materials, colors, and dimensions.
+
+Avoid duplicate products and nonsensical attributes.
+
+Provide a command such as:
+
+    python -m app.cli seed-products
+
+The ingestion pipeline must:
+1. Validate source records.
+2. Normalize fields.
+3. Deduplicate records using a documented strategy.
+4. Reject or report invalid rows.
+5. Insert or update records idempotently.
+6. Generate embeddings in batches when configured.
+7. Record embedding model and version.
+8. Report processed, inserted, updated, skipped, and failed records.
+9. Support reruns without duplicating products.
+10. Work without an external embedding API by using a documented lexical-only fallback.
+
+For images, use licensed assets, valid image sources, or local placeholders. Include fallback behavior when an image fails to load. Never hotlink images from websites without considering their terms.
+
+Include a sample dataset and a larger generation/import command. Clearly label generated records as synthetic in the UI and documentation.
+
+# 7. SEARCH ENGINE ARCHITECTURE
+
+Implement actual search pipelines with a common, testable interface.
+
+Define a retrieval interface that returns product identifiers, ranks, scores, and diagnostic metadata.
+
+## A. Lexical retrieval
+Use PostgreSQL full-text search:
+- Build tsvector representations from relevant product fields.
+- Use appropriate language configuration.
+- Weight product title and category more strongly than long descriptions.
+- Use tsquery or a safe query-construction strategy.
+- Support phrase-like matching and common query variations where feasible.
+- Add appropriate indexes.
+- Handle punctuation, stop words, and empty queries safely.
+
+Do not interpolate raw user input into SQL.
+
+## B. Dense semantic retrieval
+- Use a configurable sentence-transformers embedding model or another explicitly configured provider.
+- Store vectors in pgvector.
+- Generate embeddings for product title, description, and useful attributes.
+- Embed user queries using the same compatible model.
+- Retrieve nearest neighbors using cosine distance.
+- Apply category and structured filters correctly.
+- Use batches and bounded timeouts.
+- Avoid repeatedly generating product embeddings on every request.
+- Include an offline or lexical-only operating mode if model downloads or embedding providers are unavailable.
+
+Choose a practical default model and document its dimensions, licensing, memory requirements, and startup behavior.
+
+Do not use a different embedding model for queries and products unless a compatible mapping has been explicitly implemented and validated.
+
+## C. Hybrid retrieval
+Combine lexical and dense retrieval.
+
+Implement Reciprocal Rank Fusion:
+
+    RRF_score(d) = sum_i 1 / (k + rank_i(d))
+
+Use a configurable RRF constant, for example k = 60.
+
+Optionally implement weighted score fusion as an experimental alternative, but normalize component scores appropriately before combining them.
+
+Requirements:
+- Preserve each candidate's component ranks and scores.
+- Deduplicate candidates by product ID.
+- Support configurable retrieval depth.
+- Apply structured filters consistently.
+- Handle empty retrieval lists.
+- Ensure the final ranking is deterministic when scores tie.
+- Log diagnostic information without exposing secrets or excessive personal data.
+
+Do not add arbitrary score multipliers without a clear rationale.
+
+## D. Search modes
+Provide:
+- Keyword
+- Semantic
+- Hybrid
+
+Use hybrid as the default when embeddings are available. Fall back gracefully to lexical retrieval if semantic retrieval is unavailable.
+
+Return metadata identifying the mode actually used. Never claim hybrid retrieval occurred when only keyword retrieval ran.
+
+# 8. QUERY UNDERSTANDING
+
+Implement a lightweight query-understanding component.
+
+Extract supported structured constraints:
+- Product category
+- Maximum and minimum price
+- Color
+- Material
+- Dimensions where supported
+- Rating threshold where meaningful
+- User intent such as comparison or similar-item discovery
+
+Use deterministic parsing and validation for explicit price and filter expressions. Use an optional LLM for ambiguous natural-language interpretation.
+
+Represent parsed queries with a typed Pydantic schema.
+
+The system must:
+- Preserve the original query.
+- Validate extracted values.
+- Reject unsupported filters safely.
+- Avoid silently inventing constraints.
+- Return the parsed interpretation in diagnostics.
+- Work without the LLM.
+- Clearly distinguish deterministic extraction from LLM-assisted extraction.
+
+Do not send user data to an external model unnecessarily.
+
+# 9. RELEVANCE RANKING
+
+Implement a dedicated ranking module.
+
+Potential features:
+- Lexical rank
+- Dense similarity
+- RRF score
+- Category match
+- Attribute match
+- Price compatibility
+- Product popularity when supported by recorded data
+- Rating signals when reliable data exists
+- Availability where known
+
+Start with RRF as a transparent baseline. Introduce a second-stage reranker only if its benefit can be measured.
+
+If using a learned reranker:
+- Define input features.
+- Define the training or relevance-label source.
+- Split training and evaluation data appropriately.
+- Prevent query/product leakage.
+- Compare it against the baseline.
+- Keep it optional.
+
+Do not train a model on fabricated relevance labels and describe the results as real-world performance.
+
+## Explainability
+Return a structured explanation of relevant signals for each product, for example:
+- Matched product category
+- Matched material
+- Relevant title terms
+- Semantic similarity contribution
+- Price constraint satisfied
+
+Only expose explanations supported by actual calculations or matching evidence.
+
+Avoid presenting raw embedding similarity as a calibrated probability.
+
+# 10. RECOMMENDATION ENGINE
+
+Implement at least two genuine recommendation strategies.
+
+## A. Content-based recommendations
+Use product embeddings and structured attributes to identify similar products.
+
+Consider:
+- Title and description similarity
+- Category compatibility
+- Material and color
+- Price compatibility
+- Product dimensions
+
+Return recommendation reason codes and exclude the original product.
+
+## B. Interaction-based personalization
+Use anonymous session events to derive lightweight user preferences.
+
+A practical first version can combine:
+- Recently viewed categories
+- Clicked products
+- Saved products
+- Similarity to interacted items
+
+Apply a transparent weighted aggregation. Prevent a single event from dominating without justification.
+
+## Cold-start behavior
+For new sessions, provide category-based, popular, or content-based recommendations based on real dataset information and documented rules.
+
+## Evaluation
+Create a reproducible offline recommendation benchmark if sufficient labels are available.
+
+Use suitable metrics such as Recall@K, Precision@K, MAP@K, or NDCG@K.
+
+Clearly document the limitation of synthetic or proxy relevance labels. Do not claim that offline synthetic evaluation establishes real customer satisfaction.
+
+# 11. EVALUATION AND BENCHMARKING
+
+This is a core project requirement, not an optional decoration.
+
+Build a labelled benchmark of at least 50 diverse queries when feasible.
+
+Target a broader benchmark of 100 or more queries.
+
+Cover:
+- Exact product-name queries
+- Category queries
+- Attribute combinations
+- Natural-language descriptions
+- Price constraints
+- Synonyms
+- Ambiguous queries
+- Queries with no suitable products
+- Misspellings where supported
+- Queries combining multiple constraints
+
+For each query, define relevant product IDs or relevance grades.
+
+Store the benchmark in version-controlled JSONL or another documented format.
+
+Implement a repeatable evaluation CLI, for example:
+
+    python -m app.evaluation.run --mode all
+
+Evaluate at least:
+1. Lexical baseline
+2. Dense retrieval
+3. Hybrid retrieval
+
+Compute:
+- Precision@5 and Precision@10
+- Recall@5 and Recall@10
+- MRR@10
+- NDCG@10
+- Query-level results and aggregate metrics
+
+Define metric conventions explicitly, especially for queries with no relevant products.
+
+Use a consistent evaluation dataset, filtering policy, and candidate depth across methods.
+
+Produce a machine-readable JSON report and a concise human-readable summary.
+
+Add unit tests for the metric implementations using hand-calculated examples.
+
+Do not hardcode benchmark outputs. Run the actual evaluation and save the results.
+
+Only claim hybrid retrieval improves on the baseline if the measured results show that it does. If it does not, diagnose the problem and report the real result.
+
+# 12. PERFORMANCE AND SCALABILITY
+
+Implement sensible engineering measures:
+- Database connection pooling
+- Indexed filter columns
+- pgvector indexes when appropriate
+- Bounded candidate retrieval
+- Pagination
+- Request timeouts
+- Batched embedding generation
+- Avoidance of N+1 database queries
+- Configurable retrieval depth
+- Caching only where correctness is preserved
+- Structured logs
+- Query latency measurement
+
+Use a benchmark script with a documented workload.
+
+Measure latency under a stated dataset size, environment, concurrency, and warm/cold-cache condition.
+
+Report p50, p95, and p99 only when enough observations exist to make them meaningful. Include the sample count and environment.
+
+Never invent a latency target as an achieved result.
+
+Keep optimization evidence-based. Compare before and after measurements when making performance claims.
+
+# 13. BACKEND API CONTRACT
+
+Use versioned endpoints under /api/v1.
+
+At minimum, implement the following.
+
+## Health
+- GET /health/live
+- GET /health/ready
+
+The readiness check should verify required dependencies without exposing credentials.
+
+## Search
+- GET /api/v1/search
+- POST /api/v1/search
+
+Support:
+- Query
+- Search mode
+- Filters
+- Sort
+- Page or cursor
+- Result count
+- Query diagnostics where appropriate
+
+Use typed request and response schemas.
+
+## Products
+- GET /api/v1/products
+- GET /api/v1/products/{product_id}
+- GET /api/v1/products/{product_id}/similar
+
+## Recommendations
+- GET /api/v1/recommendations
+- POST /api/v1/events
+
+Validate interaction event types and identifiers.
+
+## Evaluation
+- GET /api/v1/evaluation/runs
+- GET /api/v1/evaluation/runs/{run_id}
+
+Do not allow public endpoints to start arbitrary expensive evaluation jobs without appropriate controls.
+
+## Search suggestions
+- GET /api/v1/search/suggestions
+
+Use a real database-backed implementation.
+
+## API requirements
+- Consistent error response format
+- Appropriate HTTP status codes
+- Input validation
+- Pagination bounds
+- Safe sorting allowlists
+- Request size limits
+- CORS configured through environment settings
+- Rate limiting where appropriate
+- Request IDs or correlation IDs
+- OpenAPI documentation
+- No stack traces or secrets returned to clients
+
+Document request and response examples.
+
+# 14. SECURITY
+
+Treat generated SQL, user queries, uploaded data, and LLM output as untrusted.
+
+Implement:
+- Parameterized database operations
+- Least-privilege database access
+- Strict input validation
+- Safe filtering and sorting
+- Query and request size limits
+- Timeouts
+- No arbitrary SQL execution from user input
+- No unrestricted shell execution by the LLM
+- Environment-managed secrets
+- Safe logging
+- Dependency vulnerability scanning in CI where available
+
+For ShopSense, the application must not permit natural-language search to execute arbitrary database commands.
+
+Use a separate, restricted database role for application queries where practical.
+
+Do not expose internal prompts, API keys, or full environment configuration through error messages.
+
+# 15. FRONTEND ENGINEERING
+
+Implement a complete React + TypeScript application.
+
+Requirements:
+- Strict TypeScript
+- Reusable components
+- Typed API client
+- Centralized API error handling
+- Correct loading, error, and empty states
+- URL-synchronized search queries and filters where practical
+- Debounced suggestions
+- Responsive product grid
+- Accessible filter controls
+- Product detail routes
+- Similar-product carousel or grid
+- Search evaluation page
+- Consistent formatting for price and dimensions
+- Stable image placeholders
+- Keyboard navigation and visible focus
+- Unit tests for key components
+
+Do not embed the product dataset directly in frontend code. Fetch data from the backend.
+
+Do not use fake search results to make the interface appear functional.
+
+Use mock data only in explicitly isolated frontend tests.
+
+# 16. OBSERVABILITY
+
+Implement structured application logging.
+
+Record appropriate operational information such as:
+- Request ID
+- Endpoint
+- Search mode actually used
+- Retrieval candidate counts
+- Backend latency
+- Error category
+- Evaluation run identifiers
+
+Avoid logging secrets, full authorization headers, or unnecessary personal data.
+
+Provide an optional development dashboard based on actual stored metrics. Keep observability lightweight and proportionate to the project.
+
+# 17. AUTOMATED TESTING
+
+Build a real test suite.
+
+## Backend unit tests
+Test:
+- Query normalization
+- Price and attribute extraction
+- Filter validation
+- RRF implementation
+- Ranking tie-breaking
+- Recommendation candidate filtering
+- Evaluation metrics
+- Invalid input handling
+- Empty-result behavior
+
+## Integration tests
+Test:
+- Database migrations
+- Seed data ingestion
+- Product listing and detail APIs
+- Search in each supported mode
+- Filtering and pagination
+- Recommendation endpoints
+- Event ingestion
+- Error responses
+- Health and readiness checks
+
+Use a dedicated test database or disposable test environment. Tests must not delete or corrupt developer data.
+
+## Frontend tests
+Test:
+- Search form submission
+- Filter interactions
+- Loading and error states
+- Product cards
+- Empty results
+- Recommendation rendering
+- API failure handling
+
+## End-to-end tests
+Where feasible, use Playwright to test:
+1. Open the homepage.
+2. Enter a natural-language query.
+3. View search results.
+4. Apply a filter.
+5. Open a product.
+6. View similar products.
+
+Include clear setup instructions and actual test commands.
+
+Never report "all tests passed" unless the test process completed successfully. Report skipped tests and environment limitations.
+
+# 18. CI/CD
+
+Create a GitHub Actions workflow that runs:
+- Python dependency installation
+- Ruff linting and formatting checks
+- Python tests
+- Static type checks where configured
+- Frontend dependency installation
+- ESLint
+- TypeScript compilation
+- Frontend tests
+- Production frontend build
+- Docker build checks where feasible
+
+Use a PostgreSQL service with pgvector for integration tests if supported by the CI environment.
+
+Pin or lock dependencies.
+
+Do not put secrets into workflow files.
+
+Do not claim deployment succeeded merely because a deployment configuration exists.
+
+# 19. DOCKER AND LOCAL DEVELOPMENT
+
+Provide a Docker Compose configuration for:
+- Frontend
+- Backend
+- PostgreSQL with pgvector
+
+Use persistent database volumes and health checks.
+
+Provide:
+- .env.example
+- Dockerfiles
+- docker-compose.yml
+- Database migration commands
+- Seed/import commands
+- Test commands
+- Development commands
+
+The expected local startup should be straightforward, for example:
+
+    docker compose up --build
+
+Then document the exact next steps needed to apply migrations, seed the catalog, and access the application.
+
+If initialization is automated, make it safe and repeatable.
+
+Never put real credentials in the example environment file.
+
+Include graceful shutdown and clear startup diagnostics.
+
+# 20. REPOSITORY STRUCTURE
+
+Use a modular, understandable structure similar to:
+
+shopsense/
+  frontend/
+    src/
+      app/
+      components/
+      features/
+        search/
+        products/
+        recommendations/
+        evaluation/
+      lib/
+      hooks/
+      types/
+    tests/
+    package.json
+    Dockerfile
+
+  backend/
+    app/
+      api/
+        v1/
+      core/
+      db/
+      models/
+      schemas/
+      repositories/
+      services/
+      search/
+      ranking/
+      recommendations/
+      evaluation/
+      ingestion/
+      cli.py
+      main.py
+    alembic/
+    tests/
+      unit/
+      integration/
+    pyproject.toml
+    Dockerfile
+
+  data/
+    sample_products.jsonl
+    evaluation_queries.jsonl
+
+  docs/
+    architecture.md
+    api.md
+    evaluation.md
+    data_model.md
+    decisions.md
+
+  .github/
+    workflows/
+      ci.yml
+
+  docker-compose.yml
+  .env.example
+  .gitignore
+  Makefile
+  README.md
+
+Adapt this structure where appropriate, but maintain clear separation between HTTP routes, business logic, retrieval, ranking, persistence, and evaluation.
+
+Do not create empty modules just to match the tree.
+
+# 21. DOCUMENTATION
+
+Create a detailed README containing:
+
+1. Project overview
+2. Problem statement
+3. Main features
+4. Architecture diagram using Mermaid
+5. Technology stack and rationale
+6. Search pipeline
+7. Hybrid ranking algorithm
+8. Recommendation architecture
+9. Database schema overview
+10. API documentation links and examples
+11. Local setup instructions
+12. Docker startup
+13. Environment variables
+14. Data ingestion and seeding
+15. Running tests
+16. Running benchmarks
+17. Evaluation metric definitions
+18. Security considerations
+19. Known limitations
+20. Troubleshooting
+21. Screenshots section
+22. Future work
+
+Also create:
+- An architecture decision record for the search design
+- A benchmark methodology document
+- A database schema diagram
+- A sample benchmark report generated from actual execution
+
+Never insert fabricated screenshots, benchmark reports, or test summaries.
+
+# 22. IMPLEMENTATION PHASES
+
+Execute in the following order. Do not attempt to create everything in one enormous unverified code dump.
+
+## Phase 0 — Repository inspection and plan
+- Inspect files, environment, runtime, and existing project state.
+- Identify package manager and available services.
+- Produce a concise implementation checklist.
+- Identify risks and compatibility issues.
+- Do not overwrite existing files without inspecting them.
+
+## Phase 1 — Foundation
+- Set up project structure.
+- Configure backend and frontend.
+- Set up PostgreSQL/pgvector.
+- Implement configuration and database connections.
+- Create migrations and health endpoints.
+- Verify services start.
+
+## Phase 2 — Catalog and product APIs
+- Build the schema and seed pipeline.
+- Insert synthetic product data.
+- Implement product listing and details.
+- Add validation and tests.
+- Verify persistence after restart.
+
+## Phase 3 — Search
+- Implement lexical retrieval.
+- Implement embedding generation and dense retrieval.
+- Implement RRF and hybrid retrieval.
+- Add filtering, pagination, and ranking explanations.
+- Build search API tests.
+- Verify the selected search mode is reported accurately.
+
+## Phase 4 — Recommendations
+- Implement content-based recommendations.
+- Add interaction events and cold-start behavior.
+- Add recommendation tests.
+- Verify duplicate and self-recommendation handling.
+
+## Phase 5 — Evaluation
+- Build labelled query benchmark.
+- Implement metrics and unit tests.
+- Run lexical, dense, and hybrid evaluation.
+- Save machine-readable reports.
+- Diagnose failures and improve the implementation based on results.
+- Do not fabricate improvements.
+
+## Phase 6 — Frontend
+- Build all core pages and reusable components.
+- Connect to real APIs.
+- Implement loading, error, and empty states.
+- Test search, filtering, details, and recommendations.
+
+## Phase 7 — Engineering hardening
+- Add structured logging, timeouts, rate limits, and safe error handling.
+- Run unit and integration tests.
+- Check typing and linting.
+- Fix regressions.
+- Validate database migrations from a clean environment.
+
+## Phase 8 — Deployment and CI
+- Complete Docker configuration.
+- Add CI workflows.
+- Verify the production build.
+- Document deployment requirements.
+- Test clean startup and restart behavior.
+
+## Phase 9 — Final verification
+Run every available relevant check.
+
+Produce a final verification table with:
+- Check
+- Command
+- Status
+- Evidence or output summary
+- Known limitation
+
+Only mark a check PASS if it actually ran and succeeded.
+
+# 23. DEFINITION OF DONE
+
+The project is ready for a credible portfolio demonstration only when:
+
+- The frontend and backend run together.
+- Database migrations work from a clean database.
+- Seed ingestion is repeatable.
+- Product search returns real database results.
+- Keyword search works.
+- Semantic search works when embeddings are configured.
+- Hybrid retrieval combines actual candidate rankings.
+- Search filters and pagination work.
+- Similar-product recommendations work.
+- API errors are handled properly.
+- Automated tests exist and have been executed.
+- Evaluation metrics are computed from a labelled benchmark.
+- A baseline versus hybrid comparison can be reproduced.
+- Docker startup and setup instructions are verified.
+- CI is configured and its checks are documented.
+- No critical feature is falsely presented as complete.
+- README and architecture documentation match the implementation.
+
+If any requirement remains incomplete, report it explicitly.
+
+# 24. FINAL PORTFOLIO QUALITY
+
+Optimize for engineering depth, not the number of libraries used.
+
+A reviewer should be able to understand:
+- Why hybrid retrieval is useful.
+- Why RRF is used and what its limitations are.
+- How embeddings are generated and versioned.
+- How product filters interact with retrieval.
+- How recommendation cold starts are handled.
+- How relevance is evaluated.
+- How performance is measured.
+- How the API and database are secured.
+- How failures are handled.
+- Which design choices were tested and which remain assumptions.
+
+Prepare a short technical demo script and a list of likely interview questions about architecture, SQL, indexing, vector retrieval, evaluation, API design, caching, security, and trade-offs.
+
+Do not claim that ShopSense is production-deployed or has real customer impact unless that is genuinely true.
+
+# 25. HOW TO WORK WITH ME
+
+Start by inspecting the available repository and environment.
+
+Then:
+1. Summarize the current state.
+2. Identify the first implementation milestone.
+3. Implement the milestone with actual files.
+4. Run relevant checks.
+5. Fix discovered errors before moving on.
+6. Update the checklist and README.
+7. Continue through the phases without silently skipping requirements.
+
+If you have terminal access, use it to create, inspect, and test the code. If you only have chat access, provide complete files in manageable groups with exact paths and commands, and wait for my execution results when verification requires a running environment.
+
+Do not stop after producing a plan or a homepage. Do not claim completion while core search, database, evaluation, tests, or API functionality remains missing.
+
+Begin with Phase 0 now.

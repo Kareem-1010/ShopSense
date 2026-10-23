@@ -1,0 +1,1687 @@
+{
+  "run_id": "eval-1792762348573",
+  "benchmark_version": "v1.0.0-furniture-53",
+  "timestamp": "2026-10-23T13:32:28.573Z",
+  "total_queries": 53,
+  "configuration": {
+    "rrf_k": 60,
+    "candidate_depth": 60,
+    "dense_model": "shopsense-dense-v1"
+  },
+  "metrics": {
+    "lexical": {
+      "precision_at_5": 0.3321,
+      "precision_at_10": 0.266,
+      "recall_at_5": 0.3121,
+      "recall_at_10": 0.4287,
+      "mrr_at_10": 0.6281,
+      "ndcg_at_10": 0.3929
+    },
+    "dense": {
+      "precision_at_5": 0.4038,
+      "precision_at_10": 0.3151,
+      "recall_at_5": 0.3191,
+      "recall_at_10": 0.4416,
+      "mrr_at_10": 0.6393,
+      "ndcg_at_10": 0.4078
+    },
+    "hybrid": {
+      "precision_at_5": 0.4113,
+      "precision_at_10": 0.3226,
+      "recall_at_5": 0.341,
+      "recall_at_10": 0.4883,
+      "mrr_at_10": 0.6349,
+      "ndcg_at_10": 0.4306
+    }
+  },
+  "latency_percentiles": {
+    "p50_ms": 45,
+    "p95_ms": 52,
+    "p99_ms": 77
+  },
+  "sample_query_results": [
+    {
+      "query_id": "eval-nl-01",
+      "query": "A compact wooden desk for a small apartment under 15000 rupees",
+      "query_type": "natural_language_description",
+      "ground_truth_count": 10,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 1,
+        "precision_at_10": 0.8,
+        "recall_at_5": 0.5,
+        "recall_at_10": 0.8,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.8466
+      },
+      "dense": {
+        "precision_at_5": 0.8,
+        "precision_at_10": 0.8,
+        "recall_at_5": 0.4,
+        "recall_at_10": 0.8,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.815
+      },
+      "hybrid": {
+        "precision_at_5": 1,
+        "precision_at_10": 0.8,
+        "recall_at_5": 0.5,
+        "recall_at_10": 0.8,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.8618
+      }
+    },
+    {
+      "query_id": "eval-nl-02",
+      "query": "Comfortable beige sofa for a modern living room",
+      "query_type": "natural_language_description",
+      "ground_truth_count": 10,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.1,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.3407
+      },
+      "dense": {
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.3,
+        "recall_at_5": 0.2,
+        "recall_at_10": 0.3,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.4482
+      },
+      "hybrid": {
+        "precision_at_5": 0.6,
+        "precision_at_10": 0.5,
+        "recall_at_5": 0.3,
+        "recall_at_10": 0.5,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.5283
+      }
+    },
+    {
+      "query_id": "eval-nl-03",
+      "query": "Storage bed with drawers for a small bedroom",
+      "query_type": "natural_language_description",
+      "ground_truth_count": 10,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0,
+        "precision_at_10": 0,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "mrr_at_10": 0,
+        "ndcg_at_10": 0
+      },
+      "dense": {
+        "precision_at_5": 0,
+        "precision_at_10": 0,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "mrr_at_10": 0,
+        "ndcg_at_10": 0
+      },
+      "hybrid": {
+        "precision_at_5": 0,
+        "precision_at_10": 0,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "mrr_at_10": 0,
+        "ndcg_at_10": 0
+      }
+    },
+    {
+      "query_id": "eval-nl-04",
+      "query": "Minimalist lamps suitable for a warm reading corner",
+      "query_type": "natural_language_description",
+      "ground_truth_count": 10,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.3,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.3,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.4837
+      },
+      "dense": {
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.2,
+        "recall_at_10": 0.2,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.3846
+      },
+      "hybrid": {
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.2,
+        "recall_at_10": 0.2,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.3896
+      }
+    },
+    {
+      "query_id": "eval-nl-05",
+      "query": "Ergonomic breathable office chair for back pain",
+      "query_type": "natural_language_description",
+      "ground_truth_count": 10,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0.6,
+        "precision_at_10": 0.6,
+        "recall_at_5": 0.3,
+        "recall_at_10": 0.6,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.5688
+      },
+      "dense": {
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.5,
+        "recall_at_5": 0.2,
+        "recall_at_10": 0.5,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.5618
+      },
+      "hybrid": {
+        "precision_at_5": 0.8,
+        "precision_at_10": 0.6,
+        "recall_at_5": 0.4,
+        "recall_at_10": 0.6,
+        "mrr_at_10": 0.5,
+        "ndcg_at_10": 0.5294
+      }
+    },
+    {
+      "query_id": "eval-nl-06",
+      "query": "Round extendable dining table for family dinners",
+      "query_type": "natural_language_description",
+      "ground_truth_count": 10,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.3,
+        "recall_at_5": 0.2,
+        "recall_at_10": 0.3,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.218
+      },
+      "dense": {
+        "precision_at_5": 1,
+        "precision_at_10": 0.7,
+        "recall_at_5": 0.5,
+        "recall_at_10": 0.7,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.7516
+      },
+      "hybrid": {
+        "precision_at_5": 0.8,
+        "precision_at_10": 0.6,
+        "recall_at_5": 0.4,
+        "recall_at_10": 0.6,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.5769
+      }
+    },
+    {
+      "query_id": "eval-exact-01",
+      "query": "Kavala Compact Wooden Desk",
+      "query_type": "exact_product_name",
+      "ground_truth_count": 1,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 1
+      },
+      "dense": {
+        "precision_at_5": 0,
+        "precision_at_10": 0,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "mrr_at_10": 0,
+        "ndcg_at_10": 0
+      },
+      "hybrid": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "mrr_at_10": 0.25,
+        "ndcg_at_10": 0.4307
+      }
+    },
+    {
+      "query_id": "eval-exact-02",
+      "query": "Aura Modern Comfort Beige 3-Seater Sofa",
+      "query_type": "exact_product_name",
+      "ground_truth_count": 1,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 1
+      },
+      "dense": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 1
+      },
+      "hybrid": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 1
+      }
+    },
+    {
+      "query_id": "eval-exact-03",
+      "query": "Haven Solid Sheesham Storage Bed",
+      "query_type": "exact_product_name",
+      "ground_truth_count": 1,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0,
+        "precision_at_10": 0,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "mrr_at_10": 0,
+        "ndcg_at_10": 0
+      },
+      "dense": {
+        "precision_at_5": 0,
+        "precision_at_10": 0,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "mrr_at_10": 0,
+        "ndcg_at_10": 0
+      },
+      "hybrid": {
+        "precision_at_5": 0,
+        "precision_at_10": 0,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "mrr_at_10": 0,
+        "ndcg_at_10": 0
+      }
+    },
+    {
+      "query_id": "eval-exact-04",
+      "query": "Verve Ergonomic Mesh Task Chair",
+      "query_type": "exact_product_name",
+      "ground_truth_count": 1,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 1
+      },
+      "dense": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "mrr_at_10": 0.3333,
+        "ndcg_at_10": 0.5
+      },
+      "hybrid": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 1
+      }
+    },
+    {
+      "query_id": "eval-exact-05",
+      "query": "Nara Warm Brass Minimalist Reading Corner Floor Lamp",
+      "query_type": "exact_product_name",
+      "ground_truth_count": 1,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 1
+      },
+      "dense": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 1
+      },
+      "hybrid": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 1
+      }
+    },
+    {
+      "query_id": "eval-cat-01",
+      "query": "bookshelf",
+      "query_type": "category",
+      "ground_truth_count": 10,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0,
+        "recall_at_10": 0.1,
+        "mrr_at_10": 0.125,
+        "ndcg_at_10": 0.0358
+      },
+      "dense": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.2,
+        "mrr_at_10": 0.25,
+        "ndcg_at_10": 0.0817
+      },
+      "hybrid": {
+        "precision_at_5": 0,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0,
+        "recall_at_10": 0.1,
+        "mrr_at_10": 0.1,
+        "ndcg_at_10": 0.0328
+      }
+    },
+    {
+      "query_id": "eval-cat-02",
+      "query": "sofas",
+      "query_type": "category",
+      "ground_truth_count": 10,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.3,
+        "recall_at_5": 0.2,
+        "recall_at_10": 0.3,
+        "mrr_at_10": 0.5,
+        "ndcg_at_10": 0.3059
+      },
+      "dense": {
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.2,
+        "recall_at_10": 0.2,
+        "mrr_at_10": 0.3333,
+        "ndcg_at_10": 0.1007
+      },
+      "hybrid": {
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.3,
+        "recall_at_5": 0.2,
+        "recall_at_10": 0.3,
+        "mrr_at_10": 0.25,
+        "ndcg_at_10": 0.2235
+      }
+    },
+    {
+      "query_id": "eval-cat-03",
+      "query": "office desks",
+      "query_type": "category",
+      "ground_truth_count": 10,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0,
+        "precision_at_10": 0,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "mrr_at_10": 0,
+        "ndcg_at_10": 0
+      },
+      "dense": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.2,
+        "mrr_at_10": 0.5,
+        "ndcg_at_10": 0.1075
+      },
+      "hybrid": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.1,
+        "mrr_at_10": 0.25,
+        "ndcg_at_10": 0.0489
+      }
+    },
+    {
+      "query_id": "eval-cat-04",
+      "query": "dining tables",
+      "query_type": "category",
+      "ground_truth_count": 10,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.4,
+        "recall_at_5": 0.2,
+        "recall_at_10": 0.4,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.3444
+      },
+      "dense": {
+        "precision_at_5": 0.6,
+        "precision_at_10": 0.4,
+        "recall_at_5": 0.3,
+        "recall_at_10": 0.4,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.7639
+      },
+      "hybrid": {
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.5,
+        "recall_at_5": 0.2,
+        "recall_at_10": 0.5,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.6643
+      }
+    },
+    {
+      "query_id": "eval-cat-05",
+      "query": "area rugs",
+      "query_type": "category",
+      "ground_truth_count": 10,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.2,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.1514
+      },
+      "dense": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.1,
+        "mrr_at_10": 0.3333,
+        "ndcg_at_10": 0.0568
+      },
+      "hybrid": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.4,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.4,
+        "mrr_at_10": 0.2,
+        "ndcg_at_10": 0.1488
+      }
+    },
+    {
+      "query_id": "eval-cat-06",
+      "query": "wardrobes and storage credenzas",
+      "query_type": "category",
+      "ground_truth_count": 10,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.1,
+        "mrr_at_10": 0.5,
+        "ndcg_at_10": 0.0717
+      },
+      "dense": {
+        "precision_at_5": 0,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0,
+        "recall_at_10": 0.1,
+        "mrr_at_10": 0.125,
+        "ndcg_at_10": 0.1075
+      },
+      "hybrid": {
+        "precision_at_5": 0,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0,
+        "recall_at_10": 0.1,
+        "mrr_at_10": 0.1111,
+        "ndcg_at_10": 0.0342
+      }
+    },
+    {
+      "query_id": "eval-attr-01",
+      "query": "solid oak writing desk with drawers",
+      "query_type": "attribute_combination",
+      "ground_truth_count": 10,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0.8,
+        "precision_at_10": 0.7,
+        "recall_at_5": 0.4,
+        "recall_at_10": 0.7,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.5243
+      },
+      "dense": {
+        "precision_at_5": 1,
+        "precision_at_10": 0.7,
+        "recall_at_5": 0.5,
+        "recall_at_10": 0.7,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.4732
+      },
+      "hybrid": {
+        "precision_at_5": 0.8,
+        "precision_at_10": 0.7,
+        "recall_at_5": 0.4,
+        "recall_at_10": 0.7,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.4681
+      }
+    },
+    {
+      "query_id": "eval-attr-02",
+      "query": "boucle fabric cream white armchair",
+      "query_type": "attribute_combination",
+      "ground_truth_count": 10,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.2,
+        "recall_at_10": 0.2,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.1852
+      },
+      "dense": {
+        "precision_at_5": 0.6,
+        "precision_at_10": 0.6,
+        "recall_at_5": 0.3,
+        "recall_at_10": 0.6,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.4334
+      },
+      "hybrid": {
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.3,
+        "recall_at_5": 0.2,
+        "recall_at_10": 0.3,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.2257
+      }
+    },
+    {
+      "query_id": "eval-attr-03",
+      "query": "walnut brown 6-drawer dresser storage",
+      "query_type": "attribute_combination",
+      "ground_truth_count": 10,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.7,
+        "recall_at_5": 0.2,
+        "recall_at_10": 0.7,
+        "mrr_at_10": 0.25,
+        "ndcg_at_10": 0.4266
+      },
+      "dense": {
+        "precision_at_5": 1,
+        "precision_at_10": 1,
+        "recall_at_5": 0.5,
+        "recall_at_10": 1,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.799
+      },
+      "hybrid": {
+        "precision_at_5": 0.8,
+        "precision_at_10": 0.8,
+        "recall_at_5": 0.4,
+        "recall_at_10": 0.8,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.7133
+      }
+    },
+    {
+      "query_id": "eval-attr-04",
+      "query": "brass arch floor lamp with glass shade",
+      "query_type": "attribute_combination",
+      "ground_truth_count": 10,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.3,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.3,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.2678
+      },
+      "dense": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.2,
+        "mrr_at_10": 0.5,
+        "ndcg_at_10": 0.1742
+      },
+      "hybrid": {
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.2,
+        "recall_at_10": 0.2,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.2454
+      }
+    },
+    {
+      "query_id": "eval-attr-05",
+      "query": "organic jute geometric rug runner",
+      "query_type": "attribute_combination",
+      "ground_truth_count": 5,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.5,
+        "recall_at_5": 0.2,
+        "recall_at_10": 1,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.7556
+      },
+      "dense": {
+        "precision_at_5": 1,
+        "precision_at_10": 0.5,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.9686
+      },
+      "hybrid": {
+        "precision_at_5": 1,
+        "precision_at_10": 0.5,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.9808
+      }
+    },
+    {
+      "query_id": "eval-price-01",
+      "query": "dining table under 20000 rupees",
+      "query_type": "price_constraint",
+      "ground_truth_count": 7,
+      "retrieved_count": 7,
+      "lexical": {
+        "precision_at_5": 1,
+        "precision_at_10": 0.7,
+        "recall_at_5": 0.7143,
+        "recall_at_10": 1,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.8195
+      },
+      "dense": {
+        "precision_at_5": 1,
+        "precision_at_10": 0.7,
+        "recall_at_5": 0.7143,
+        "recall_at_10": 1,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.9247
+      },
+      "hybrid": {
+        "precision_at_5": 1,
+        "precision_at_10": 0.7,
+        "recall_at_5": 0.7143,
+        "recall_at_10": 1,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.837
+      }
+    },
+    {
+      "query_id": "eval-price-02",
+      "query": "affordable desk lamp under 3000",
+      "query_type": "price_constraint",
+      "ground_truth_count": 4,
+      "retrieved_count": 0,
+      "lexical": {
+        "precision_at_5": 0,
+        "precision_at_10": 0,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "mrr_at_10": 0,
+        "ndcg_at_10": 0
+      },
+      "dense": {
+        "precision_at_5": 0,
+        "precision_at_10": 0,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "mrr_at_10": 0,
+        "ndcg_at_10": 0
+      },
+      "hybrid": {
+        "precision_at_5": 0,
+        "precision_at_10": 0,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "mrr_at_10": 0,
+        "ndcg_at_10": 0
+      }
+    },
+    {
+      "query_id": "eval-price-03",
+      "query": "accent chair under 10000 rupees",
+      "query_type": "price_constraint",
+      "ground_truth_count": 10,
+      "retrieved_count": 13,
+      "lexical": {
+        "precision_at_5": 0.8,
+        "precision_at_10": 0.7,
+        "recall_at_5": 0.4,
+        "recall_at_10": 0.7,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.7675
+      },
+      "dense": {
+        "precision_at_5": 0.8,
+        "precision_at_10": 0.8,
+        "recall_at_5": 0.4,
+        "recall_at_10": 0.8,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.7998
+      },
+      "hybrid": {
+        "precision_at_5": 1,
+        "precision_at_10": 0.7,
+        "recall_at_5": 0.5,
+        "recall_at_10": 0.7,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.7254
+      }
+    },
+    {
+      "query_id": "eval-price-04",
+      "query": "cheap bedside runner rug under 5000",
+      "query_type": "price_constraint",
+      "ground_truth_count": 4,
+      "retrieved_count": 4,
+      "lexical": {
+        "precision_at_5": 0.8,
+        "precision_at_10": 0.4,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.8331
+      },
+      "dense": {
+        "precision_at_5": 0.8,
+        "precision_at_10": 0.4,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.9413
+      },
+      "hybrid": {
+        "precision_at_5": 0.8,
+        "precision_at_10": 0.4,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.8331
+      }
+    },
+    {
+      "query_id": "eval-price-05",
+      "query": "luxury king size bed above 40000 rupees",
+      "query_type": "price_constraint",
+      "ground_truth_count": 10,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.5,
+        "recall_at_5": 0.2,
+        "recall_at_10": 0.5,
+        "mrr_at_10": 0.5,
+        "ndcg_at_10": 0.3929
+      },
+      "dense": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.3,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.3,
+        "mrr_at_10": 0.2,
+        "ndcg_at_10": 0.1856
+      },
+      "hybrid": {
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.4,
+        "recall_at_5": 0.2,
+        "recall_at_10": 0.4,
+        "mrr_at_10": 0.3333,
+        "ndcg_at_10": 0.3687
+      }
+    },
+    {
+      "query_id": "eval-syn-01",
+      "query": "couch for living room",
+      "query_type": "synonyms",
+      "ground_truth_count": 10,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0,
+        "precision_at_10": 0,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "mrr_at_10": 0,
+        "ndcg_at_10": 0
+      },
+      "dense": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.2,
+        "mrr_at_10": 0.3333,
+        "ndcg_at_10": 0.0926
+      },
+      "hybrid": {
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.2,
+        "recall_at_10": 0.2,
+        "mrr_at_10": 0.5,
+        "ndcg_at_10": 0.1206
+      }
+    },
+    {
+      "query_id": "eval-syn-02",
+      "query": "credenza for tableware",
+      "query_type": "synonyms",
+      "ground_truth_count": 10,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0,
+        "precision_at_10": 0,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "mrr_at_10": 0,
+        "ndcg_at_10": 0
+      },
+      "dense": {
+        "precision_at_5": 0,
+        "precision_at_10": 0,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "mrr_at_10": 0,
+        "ndcg_at_10": 0
+      },
+      "hybrid": {
+        "precision_at_5": 0,
+        "precision_at_10": 0,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "mrr_at_10": 0,
+        "ndcg_at_10": 0
+      }
+    },
+    {
+      "query_id": "eval-syn-03",
+      "query": "etagere for home plants",
+      "query_type": "synonyms",
+      "ground_truth_count": 10,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0,
+        "precision_at_10": 0,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "mrr_at_10": 0,
+        "ndcg_at_10": 0
+      },
+      "dense": {
+        "precision_at_5": 0,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0,
+        "recall_at_10": 0.1,
+        "mrr_at_10": 0.1429,
+        "ndcg_at_10": 0.1136
+      },
+      "hybrid": {
+        "precision_at_5": 0,
+        "precision_at_10": 0,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "mrr_at_10": 0,
+        "ndcg_at_10": 0
+      }
+    },
+    {
+      "query_id": "eval-syn-04",
+      "query": "carpet for drawing room",
+      "query_type": "synonyms",
+      "ground_truth_count": 10,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0,
+        "recall_at_10": 0.2,
+        "mrr_at_10": 0.1667,
+        "ndcg_at_10": 0.0783
+      },
+      "dense": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.1,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.1136
+      },
+      "hybrid": {
+        "precision_at_5": 0,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0,
+        "recall_at_10": 0.1,
+        "mrr_at_10": 0.1667,
+        "ndcg_at_10": 0.0405
+      }
+    },
+    {
+      "query_id": "eval-syn-05",
+      "query": "chiffonier wardrobe for bedroom clothes",
+      "query_type": "synonyms",
+      "ground_truth_count": 10,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.1,
+        "mrr_at_10": 0.25,
+        "ndcg_at_10": 0.0489
+      },
+      "dense": {
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.3,
+        "recall_at_5": 0.2,
+        "recall_at_10": 0.3,
+        "mrr_at_10": 0.5,
+        "ndcg_at_10": 0.228
+      },
+      "hybrid": {
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.3,
+        "recall_at_5": 0.2,
+        "recall_at_10": 0.3,
+        "mrr_at_10": 0.25,
+        "ndcg_at_10": 0.1287
+      }
+    },
+    {
+      "query_id": "eval-missp-01",
+      "query": "woodn deske for small room",
+      "query_type": "misspellings",
+      "ground_truth_count": 10,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0,
+        "precision_at_10": 0,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "mrr_at_10": 0,
+        "ndcg_at_10": 0
+      },
+      "dense": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.3,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.3,
+        "mrr_at_10": 0.5,
+        "ndcg_at_10": 0.2288
+      },
+      "hybrid": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.2,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.2349
+      }
+    },
+    {
+      "query_id": "eval-missp-02",
+      "query": "ergonimic offise chaire",
+      "query_type": "misspellings",
+      "ground_truth_count": 10,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0,
+        "precision_at_10": 0,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "mrr_at_10": 0,
+        "ndcg_at_10": 0
+      },
+      "dense": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.3,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.3,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.4761
+      },
+      "hybrid": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.3,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.3,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.4761
+      }
+    },
+    {
+      "query_id": "eval-missp-03",
+      "query": "modren beig sofa couch",
+      "query_type": "misspellings",
+      "ground_truth_count": 6,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 1,
+        "precision_at_10": 0.6,
+        "recall_at_5": 0.8333,
+        "recall_at_10": 1,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.7653
+      },
+      "dense": {
+        "precision_at_5": 0,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0,
+        "recall_at_10": 0.3333,
+        "mrr_at_10": 0.1667,
+        "ndcg_at_10": 0.1794
+      },
+      "hybrid": {
+        "precision_at_5": 0.8,
+        "precision_at_10": 0.6,
+        "recall_at_5": 0.6667,
+        "recall_at_10": 1,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.9376
+      }
+    },
+    {
+      "query_id": "eval-missp-04",
+      "query": "sheeshm king platfor bed",
+      "query_type": "misspellings",
+      "ground_truth_count": 7,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0.1429,
+        "recall_at_10": 0.1429,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.3798
+      },
+      "dense": {
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.2857,
+        "recall_at_10": 0.2857,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.4596
+      },
+      "hybrid": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.3,
+        "recall_at_5": 0.1429,
+        "recall_at_10": 0.4286,
+        "mrr_at_10": 0.5,
+        "ndcg_at_10": 0.3094
+      }
+    },
+    {
+      "query_id": "eval-multi-01",
+      "query": "NordicCraft solid oak desk under 25000 in natural warm oak",
+      "query_type": "multiple_constraints",
+      "ground_truth_count": 1,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "mrr_at_10": 0.5,
+        "ndcg_at_10": 0.6309
+      },
+      "dense": {
+        "precision_at_5": 0,
+        "precision_at_10": 0,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "mrr_at_10": 0,
+        "ndcg_at_10": 0
+      },
+      "hybrid": {
+        "precision_at_5": 0,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0,
+        "recall_at_10": 1,
+        "mrr_at_10": 0.125,
+        "ndcg_at_10": 0.3155
+      }
+    },
+    {
+      "query_id": "eval-multi-02",
+      "query": "UrbanWood sheesham dining table under 30000 with 6 seats",
+      "query_type": "multiple_constraints",
+      "ground_truth_count": 2,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.2,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.9197
+      },
+      "dense": {
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.2,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "mrr_at_10": 0.5,
+        "ndcg_at_10": 0.6509
+      },
+      "hybrid": {
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.2,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "mrr_at_10": 0.5,
+        "ndcg_at_10": 0.6509
+      }
+    },
+    {
+      "query_id": "eval-multi-03",
+      "query": "Minimalia dimmable black floor lamp under 6000",
+      "query_type": "multiple_constraints",
+      "ground_truth_count": 5,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0.6,
+        "precision_at_10": 0.5,
+        "recall_at_5": 0.6,
+        "recall_at_10": 1,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.7503
+      },
+      "dense": {
+        "precision_at_5": 0.6,
+        "precision_at_10": 0.4,
+        "recall_at_5": 0.6,
+        "recall_at_10": 0.8,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.6101
+      },
+      "hybrid": {
+        "precision_at_5": 0.6,
+        "precision_at_10": 0.4,
+        "recall_at_5": 0.6,
+        "recall_at_10": 0.8,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.7479
+      }
+    },
+    {
+      "query_id": "eval-multi-04",
+      "query": "Habitat Living velvet sofa in forest green over 30000",
+      "query_type": "multiple_constraints",
+      "ground_truth_count": 10,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0,
+        "recall_at_10": 0.1,
+        "mrr_at_10": 0.1,
+        "ndcg_at_10": 0.0985
+      },
+      "dense": {
+        "precision_at_5": 0.6,
+        "precision_at_10": 0.5,
+        "recall_at_5": 0.3,
+        "recall_at_10": 0.5,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.3809
+      },
+      "hybrid": {
+        "precision_at_5": 0.6,
+        "precision_at_10": 0.5,
+        "recall_at_5": 0.3,
+        "recall_at_10": 0.5,
+        "mrr_at_10": 0.5,
+        "ndcg_at_10": 0.3098
+      }
+    },
+    {
+      "query_id": "eval-amb-01",
+      "query": "cozy reading corner setup",
+      "query_type": "ambiguous",
+      "ground_truth_count": 10,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.3,
+        "recall_at_5": 0.2,
+        "recall_at_10": 0.3,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.4971
+      },
+      "dense": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.4,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.4,
+        "mrr_at_10": 0.3333,
+        "ndcg_at_10": 0.2795
+      },
+      "hybrid": {
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.4,
+        "recall_at_5": 0.2,
+        "recall_at_10": 0.4,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.5488
+      }
+    },
+    {
+      "query_id": "eval-amb-02",
+      "query": "small apartment essentials",
+      "query_type": "ambiguous",
+      "ground_truth_count": 10,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.1,
+        "mrr_at_10": 0.2,
+        "ndcg_at_10": 0.0439
+      },
+      "dense": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.1,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.1136
+      },
+      "hybrid": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.1,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.1136
+      }
+    },
+    {
+      "query_id": "eval-amb-03",
+      "query": "minimalist workspace decor",
+      "query_type": "ambiguous",
+      "ground_truth_count": 10,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0,
+        "precision_at_10": 0,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "mrr_at_10": 0,
+        "ndcg_at_10": 0
+      },
+      "dense": {
+        "precision_at_5": 0,
+        "precision_at_10": 0,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "mrr_at_10": 0,
+        "ndcg_at_10": 0
+      },
+      "hybrid": {
+        "precision_at_5": 0,
+        "precision_at_10": 0,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "mrr_at_10": 0,
+        "ndcg_at_10": 0
+      }
+    },
+    {
+      "query_id": "eval-alt-01",
+      "query": "Show alternatives to this chair with better reviews",
+      "query_type": "natural_language_description",
+      "ground_truth_count": 10,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.2,
+        "recall_at_10": 0.2,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.4124
+      },
+      "dense": {
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.3,
+        "recall_at_5": 0.2,
+        "recall_at_10": 0.3,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.5108
+      },
+      "hybrid": {
+        "precision_at_5": 0.6,
+        "precision_at_10": 0.6,
+        "recall_at_5": 0.3,
+        "recall_at_10": 0.6,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.6892
+      }
+    },
+    {
+      "query_id": "eval-alt-02",
+      "query": "Find a similar dining table but cheaper",
+      "query_type": "natural_language_description",
+      "ground_truth_count": 7,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.2857,
+        "recall_at_10": 0.2857,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.3662
+      },
+      "dense": {
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.2857,
+        "recall_at_10": 0.2857,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.3662
+      },
+      "hybrid": {
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.2857,
+        "recall_at_10": 0.2857,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.3662
+      }
+    },
+    {
+      "query_id": "eval-alt-03",
+      "query": "alternatives to solid wood desk engineered wood under 12000",
+      "query_type": "multiple_constraints",
+      "ground_truth_count": 9,
+      "retrieved_count": 9,
+      "lexical": {
+        "precision_at_5": 1,
+        "precision_at_10": 0.9,
+        "recall_at_5": 0.5556,
+        "recall_at_10": 1,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.856
+      },
+      "dense": {
+        "precision_at_5": 1,
+        "precision_at_10": 0.9,
+        "recall_at_5": 0.5556,
+        "recall_at_10": 1,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.7747
+      },
+      "hybrid": {
+        "precision_at_5": 1,
+        "precision_at_10": 0.9,
+        "recall_at_5": 0.5556,
+        "recall_at_10": 1,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.8272
+      }
+    },
+    {
+      "query_id": "eval-shelf-01",
+      "query": "5-tier modular bookshelf for living room library",
+      "query_type": "attribute_combination",
+      "ground_truth_count": 7,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 1,
+        "precision_at_10": 0.7,
+        "recall_at_5": 0.7143,
+        "recall_at_10": 1,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.8137
+      },
+      "dense": {
+        "precision_at_5": 1,
+        "precision_at_10": 0.7,
+        "recall_at_5": 0.7143,
+        "recall_at_10": 1,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.9304
+      },
+      "hybrid": {
+        "precision_at_5": 1,
+        "precision_at_10": 0.7,
+        "recall_at_5": 0.7143,
+        "recall_at_10": 1,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.9247
+      }
+    },
+    {
+      "query_id": "eval-acc-01",
+      "query": "handcrafted ceramic vase tabletop decor",
+      "query_type": "attribute_combination",
+      "ground_truth_count": 9,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0.8,
+        "precision_at_10": 0.4,
+        "recall_at_5": 0.4444,
+        "recall_at_10": 0.4444,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.3895
+      },
+      "dense": {
+        "precision_at_5": 1,
+        "precision_at_10": 0.9,
+        "recall_at_5": 0.5556,
+        "recall_at_10": 1,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.8949
+      },
+      "hybrid": {
+        "precision_at_5": 0.8,
+        "precision_at_10": 0.6,
+        "recall_at_5": 0.4444,
+        "recall_at_10": 0.6667,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.5992
+      }
+    },
+    {
+      "query_id": "eval-acc-02",
+      "query": "travertine marble bookends and catchall tray",
+      "query_type": "attribute_combination",
+      "ground_truth_count": 4,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0.6,
+        "precision_at_10": 0.3,
+        "recall_at_5": 0.75,
+        "recall_at_10": 0.75,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.752
+      },
+      "dense": {
+        "precision_at_5": 0.8,
+        "precision_at_10": 0.4,
+        "recall_at_5": 1,
+        "recall_at_10": 1,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.9604
+      },
+      "hybrid": {
+        "precision_at_5": 0.6,
+        "precision_at_10": 0.4,
+        "recall_at_5": 0.75,
+        "recall_at_10": 1,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.929
+      }
+    },
+    {
+      "query_id": "eval-rug-01",
+      "query": "hand tufted new zealand wool area rug for bedroom",
+      "query_type": "attribute_combination",
+      "ground_truth_count": 10,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0.6,
+        "precision_at_10": 0.5,
+        "recall_at_5": 0.3,
+        "recall_at_10": 0.5,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.4806
+      },
+      "dense": {
+        "precision_at_5": 1,
+        "precision_at_10": 0.5,
+        "recall_at_5": 0.5,
+        "recall_at_10": 0.5,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.562
+      },
+      "hybrid": {
+        "precision_at_5": 0.8,
+        "precision_at_10": 0.6,
+        "recall_at_5": 0.4,
+        "recall_at_10": 0.6,
+        "mrr_at_10": 1,
+        "ndcg_at_10": 0.6531
+      }
+    },
+    {
+      "query_id": "eval-syn-06",
+      "query": "divan with mattress and storage",
+      "query_type": "synonyms",
+      "ground_truth_count": 10,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.3,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.3,
+        "mrr_at_10": 0.2,
+        "ndcg_at_10": 0.2025
+      },
+      "dense": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.2,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.2,
+        "mrr_at_10": 0.3333,
+        "ndcg_at_10": 0.091
+      },
+      "hybrid": {
+        "precision_at_5": 0,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0,
+        "recall_at_10": 0.1,
+        "mrr_at_10": 0.1111,
+        "ndcg_at_10": 0.0342
+      }
+    },
+    {
+      "query_id": "eval-missp-05",
+      "query": "bookshilf for stody room",
+      "query_type": "misspellings",
+      "ground_truth_count": 10,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0,
+        "precision_at_10": 0,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "mrr_at_10": 0,
+        "ndcg_at_10": 0
+      },
+      "dense": {
+        "precision_at_5": 0.2,
+        "precision_at_10": 0.1,
+        "recall_at_5": 0.1,
+        "recall_at_10": 0.1,
+        "mrr_at_10": 0.5,
+        "ndcg_at_10": 0.215
+      },
+      "hybrid": {
+        "precision_at_5": 0,
+        "precision_at_10": 0,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "mrr_at_10": 0,
+        "ndcg_at_10": 0
+      }
+    },
+    {
+      "query_id": "eval-zero-04",
+      "query": "mechanical gaming keyboard RGB switches",
+      "query_type": "no_results",
+      "ground_truth_count": 0,
+      "retrieved_count": 15,
+      "lexical": {
+        "precision_at_5": 0,
+        "precision_at_10": 0,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "mrr_at_10": 0,
+        "ndcg_at_10": 0
+      },
+      "dense": {
+        "precision_at_5": 0,
+        "precision_at_10": 0,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "mrr_at_10": 0,
+        "ndcg_at_10": 0
+      },
+      "hybrid": {
+        "precision_at_5": 0,
+        "precision_at_10": 0,
+        "recall_at_5": 0,
+        "recall_at_10": 0,
+        "mrr_at_10": 0,
+        "ndcg_at_10": 0
+      }
+    }
+  ]
+}
