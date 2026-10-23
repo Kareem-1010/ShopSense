@@ -166,29 +166,7 @@ docker compose up --build
 
 ---
 
-## 7. Technical Interview Questions & Answers
-
-### Q1: Why use Reciprocal Rank Fusion (RRF) instead of linear score combination ($w_1 \cdot \text{BM25} + w_2 \cdot \text{Cosine}$)?
-> **Answer**: BM25 scores are unbounded and sensitive to document length and inverse document frequency, while cosine similarity is bounded between $[-1, 1]$ (or $[0, 1]$ for non-negative vectors). Naive linear combination requires calibrating weight parameters $w_1, w_2$ on specific distributions, which drift when new products or queries arrive. RRF operates strictly on ordinal ranks:
-> $$\text{RRF}(d) = \sum_{m} \frac{1}{k + \text{rank}_m(d)}$$
-> By using reciprocal ranks with constant $k=60$, high-ranking consensus candidates naturally rise to the top while avoiding score calibration drift.
-
-### Q2: How does ShopSense handle money and prices in the database?
-> **Answer**: Prices are stored using fixed-point `NUMERIC(12, 2)` (or integer rupees) — **never IEEE-754 binary floating point (`FLOAT` / `DOUBLE`)**. Floating point arithmetic introduces rounding errors (e.g. $0.1 + 0.2 = 0.30000000000000004$), which can corrupt financial ledger calculations and price filter predicates (`WHERE price <= 15000`).
-
-### Q3: How do you handle cold-start users in the recommendation system?
-> **Answer**: For users with fewer than 2 interactions, ShopSense implements a curated cold-start strategy: it retrieves top-rated items with high review counts distributed evenly across diverse product categories, labeled with explicit cold-start reason codes. Once a user triggers 2 or more interactions (`view`, `click`, `save`), the engine computes a session centroid vector and category affinity weights to deliver personalized recommendations without requiring login or persistent tracking cookies.
-
-### Q4: How is vector search indexed and scaled in production PostgreSQL?
-> **Answer**: In PostgreSQL with `pgvector`, vectors are indexed using **HNSW (Hierarchical Navigable Small World)** or **IVFFlat (Inverted File Flat)**:
-> ```sql
-> CREATE INDEX ON product_embeddings USING hnsw (vector vector_cosine_ops) WITH (m = 16, ef_construction = 64);
-> ```
-> HNSW provides superior recall-to-latency trade-offs for high QPS search workloads.
-
----
-
-## 8. Verification & Test Summary
+## 7. Verification & Test Summary
 
 | Check | Command | Status | Output Summary |
 | :--- | :--- | :---: | :--- |
@@ -199,9 +177,3 @@ docker compose up --build
 | **TypeScript Typecheck** | `npm run lint` | **PASS** | `tsc --noEmit` clean with 0 errors |
 | **Applet Compilation** | `npm run build` | **PASS** | Production Vite bundle compiled cleanly |
 | **Server Health** | `GET /health/ready` | **PASS** | Status 200 ready, catalog size 525 |
-
----
-
-## 9. License & Disclosure
-- **License**: Apache-2.0
-- **Dataset Disclosure**: Catalog records, brand titles, and images in this repository are synthetic demo assets designed exclusively for Information Retrieval research, engineering benchmarking, and demonstration.
