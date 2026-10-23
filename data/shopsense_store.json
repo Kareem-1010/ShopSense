@@ -53174,6 +53174,242 @@
       "session_id": "anonymous-session",
       "id": "se-1792766498987-dujwz",
       "timestamp": "2026-10-23T14:41:38.987Z"
+    },
+    {
+      "query": "modern comfortable living room seating",
+      "normalized_query": "modern comfortable living room seating",
+      "filters": {},
+      "retrieval_mode": "semantic",
+      "result_ids": [
+        "prod-dining-280",
+        "prod-flagship-2",
+        "prod-lighting-353",
+        "prod-accessories-488",
+        "prod-dining-271",
+        "prod-beds-163",
+        "prod-dining-303",
+        "prod-dining-298",
+        "prod-beds-208",
+        "prod-dining-278",
+        "prod-lighting-352",
+        "prod-accessories-490",
+        "prod-desks-7",
+        "prod-lighting-339",
+        "prod-dining-276",
+        "prod-desks-50",
+        "prod-shelves-429",
+        "prod-desks-21",
+        "prod-dining-261",
+        "prod-dining-291"
+      ],
+      "latency_ms": 8.6,
+      "session_id": "anonymous-session",
+      "id": "se-1792769178107-hbujv",
+      "timestamp": "2026-10-23T15:26:18.107Z"
+    },
+    {
+      "query": "solid oak compact desk",
+      "normalized_query": "solid oak compact desk",
+      "filters": {
+        "category": "desks"
+      },
+      "retrieval_mode": "hybrid",
+      "result_ids": [
+        "prod-desks-14",
+        "prod-desks-25",
+        "prod-desks-5",
+        "prod-flagship-1",
+        "prod-desks-18",
+        "prod-desks-10",
+        "prod-desks-26",
+        "prod-desks-22",
+        "prod-desks-16",
+        "prod-desks-1",
+        "prod-desks-40",
+        "prod-desks-44",
+        "prod-desks-6",
+        "prod-desks-45",
+        "prod-desks-4",
+        "prod-desks-15",
+        "prod-desks-19",
+        "prod-desks-35",
+        "prod-desks-28",
+        "prod-desks-41"
+      ],
+      "latency_ms": 24.15,
+      "session_id": "anonymous-session",
+      "id": "se-1792769178159-ttyce",
+      "timestamp": "2026-10-23T15:26:18.159Z"
+    },
+    {
+      "query": "xylophone antique oak desk",
+      "normalized_query": "xylophone antique oak desk",
+      "filters": {
+        "category": "desks"
+      },
+      "retrieval_mode": "hybrid",
+      "result_ids": [
+        "prod-desks-5",
+        "prod-desks-10",
+        "prod-desks-16",
+        "prod-desks-40",
+        "prod-desks-14",
+        "prod-desks-18",
+        "prod-desks-25",
+        "prod-desks-15",
+        "prod-desks-4",
+        "prod-desks-1",
+        "prod-desks-45",
+        "prod-flagship-1",
+        "prod-desks-26",
+        "prod-desks-32",
+        "prod-desks-9",
+        "prod-desks-13",
+        "prod-desks-3",
+        "prod-desks-44",
+        "prod-desks-20",
+        "prod-desks-22"
+      ],
+      "latency_ms": 5.11,
+      "session_id": "anonymous-session",
+      "id": "se-1792769178184-pgz9l",
+      "timestamp": "2026-10-23T15:26:18.184Z"
+    },
+    {
+      "query": "sofa",
+      "normalized_query": "sofa",
+      "filters": {
+        "category": "sofas"
+      },
+      "retrieval_mode": "keyword",
+      "result_ids": [
+        "prod-flagship-2",
+        "prod-sofas-147",
+        "prod-sofas-155",
+        "prod-sofas-133",
+        "prod-sofas-138",
+        "prod-sofas-149",
+        "prod-sofas-153",
+        "prod-sofas-106",
+        "prod-sofas-111",
+        "prod-sofas-113",
+        "prod-sofas-144",
+        "prod-sofas-146",
+        "prod-sofas-126",
+        "prod-sofas-142",
+        "prod-sofas-116",
+        "prod-sofas-119",
+        "prod-sofas-129",
+        "prod-sofas-143",
+        "prod-sofas-109",
+        "prod-sofas-128"
+      ],
+      "latency_ms": 1.24,
+      "session_id": "anonymous-session",
+      "id": "se-1792769178208-srkov",
+      "timestamp": "2026-10-23T15:26:18.208Z"
+    },
+    {
+      "query": "sofa",
+      "normalized_query": "sofa",
+      "filters": {
+        "category": "sofas"
+      },
+      "retrieval_mode": "semantic",
+      "result_ids": [
+        "prod-sofas-138",
+        "prod-sofas-143",
+        "prod-sofas-126",
+        "prod-sofas-113",
+        "prod-sofas-116",
+        "prod-sofas-153",
+        "prod-sofas-147",
+        "prod-sofas-156",
+        "prod-sofas-118",
+        "prod-sofas-149",
+        "prod-sofas-129",
+        "prod-sofas-134",
+        "prod-sofas-109",
+        "prod-sofas-111",
+        "prod-sofas-107",
+        "prod-sofas-144",
+        "prod-flagship-2",
+        "prod-sofas-106",
+        "prod-sofas-146",
+        "prod-sofas-133"
+      ],
+      "latency_ms": 0.77,
+      "session_id": "anonymous-session",
+      "id": "se-1792769178230-g701s",
+      "timestamp": "2026-10-23T15:26:18.230Z"
+    },
+    {
+      "query": "sofa",
+      "normalized_query": "sofa",
+      "filters": {
+        "category": "sofas"
+      },
+      "retrieval_mode": "hybrid",
+      "result_ids": [
+        "prod-sofas-138",
+        "prod-sofas-147",
+        "prod-sofas-153",
+        "prod-sofas-113",
+        "prod-sofas-126",
+        "prod-sofas-149",
+        "prod-flagship-2",
+        "prod-sofas-143",
+        "prod-sofas-116",
+        "prod-sofas-133",
+        "prod-sofas-111",
+        "prod-sofas-106",
+        "prod-sofas-155",
+        "prod-sofas-144",
+        "prod-sofas-129",
+        "prod-sofas-156",
+        "prod-sofas-118",
+        "prod-sofas-146",
+        "prod-sofas-109",
+        "prod-sofas-134"
+      ],
+      "latency_ms": 1.72,
+      "session_id": "anonymous-session",
+      "id": "se-1792769178251-oiw6k",
+      "timestamp": "2026-10-23T15:26:18.251Z"
+    },
+    {
+      "query": "dining table",
+      "normalized_query": "dining table",
+      "filters": {
+        "category": "dining"
+      },
+      "retrieval_mode": "hybrid",
+      "result_ids": [
+        "prod-dining-261",
+        "prod-dining-264",
+        "prod-dining-297",
+        "prod-flagship-4",
+        "prod-dining-309",
+        "prod-dining-269",
+        "prod-dining-262",
+        "prod-flagship-5",
+        "prod-dining-301",
+        "prod-dining-290",
+        "prod-dining-293",
+        "prod-dining-311",
+        "prod-dining-288",
+        "prod-dining-312",
+        "prod-dining-296",
+        "prod-dining-306",
+        "prod-dining-265",
+        "prod-dining-283",
+        "prod-dining-295",
+        "prod-dining-310"
+      ],
+      "latency_ms": 1.24,
+      "session_id": "anonymous-session",
+      "id": "se-1792769178274-skns1",
+      "timestamp": "2026-10-23T15:26:18.274Z"
     }
   ],
   "user_interactions": [
@@ -53323,6 +53559,27 @@
       "event_type": "save",
       "id": "ui-1792766496490-nzqhu",
       "timestamp": "2026-10-23T14:41:36.490Z"
+    },
+    {
+      "session_id": "sess-1792769353632-ys1ktp",
+      "product_id": "prod-shelves-417",
+      "event_type": "view",
+      "timestamp": "2026-10-23T15:33:11.124Z",
+      "id": "ui-1792769591124-g74nh"
+    },
+    {
+      "session_id": "sess-1792769353632-ys1ktp",
+      "product_id": "prod-flagship-1",
+      "event_type": "compare",
+      "timestamp": "2026-10-23T15:33:14.397Z",
+      "id": "ui-1792769594397-yjfbx"
+    },
+    {
+      "session_id": "sess-1792769353632-ys1ktp",
+      "product_id": "prod-shelves-419",
+      "event_type": "compare",
+      "timestamp": "2026-10-23T15:33:38.890Z",
+      "id": "ui-1792769618890-6odfl"
     }
   ],
   "evaluation_runs": [
